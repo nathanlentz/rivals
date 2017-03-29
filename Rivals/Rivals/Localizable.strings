@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Rivals
+
+  Created by X Code User on 3/29/17.
+  Copyright © 2017 ntnl.design. All rights reserved.
+*/
+
+
+/* English Strings */
+"Email_Text" = "Email";
+"Password_Text" = "Password";
+"Login_Text" = "Login";
+"Signup_Text" = "No account? Register here";
+
