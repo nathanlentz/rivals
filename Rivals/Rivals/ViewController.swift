@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var PasswordTextField: UITextField!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         EmailTextField.placeholder = "Email_Text".localized
