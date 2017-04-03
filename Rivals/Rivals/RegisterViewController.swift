@@ -72,8 +72,6 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
                     self.present(vc, animated: true, completion: nil)
                 }
                 
-                
-      
                 print("User created!")
             }
             else {

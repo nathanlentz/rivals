@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController : UIViewController {
 
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         EmailTextField.placeholder = "Email_Text".localized
         PasswordTextField.placeholder = "Password_Text".localized
         
-    
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +30,6 @@ class ViewController: UIViewController {
 
     
 }
-
 
 extension String {
     var localized: String {
