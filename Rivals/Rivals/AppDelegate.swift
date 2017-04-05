@@ -20,8 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FIRApp.configure()
         
-        var ref: FIRDatabaseReference!
-        ref = FIRDatabase.database().reference()
         return true
     }
 

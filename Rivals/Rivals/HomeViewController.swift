@@ -14,9 +14,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let user = FIRAuth.auth()?.currentUser?.displayName {
-            
-        }
         
         
         // Do any additional setup after loading the view.

@@ -68,7 +68,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
                         
                     self.ref.child("users").child(user.uid).setValue(userInfo)
                     
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userVC")
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
                     self.present(vc, animated: true, completion: nil)
                 }
                 

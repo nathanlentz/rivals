@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E401993948FF3CE200CB398 /* Pods_RivalsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8694BBE497CAD366B4ED9234 /* Pods_RivalsUITests.framework */; };
 		330D12D91E8C38A500D1BBBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 330D12D81E8C38A500D1BBBC /* Localizable.strings */; };
+		331BFAA81E95344D00CD7B16 /* Rivalry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331BFAA71E95344D00CD7B16 /* Rivalry.swift */; };
 		334EB7681E92CEB4007286DA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334EB7671E92CEB4007286DA /* HomeViewController.swift */; };
 		334EB76B1E92D1EB007286DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334EB76A1E92D1EB007286DA /* User.swift */; };
 		335DEEC01E8C47D30057E46E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DEEBF1E8C47D30057E46E /* RegisterViewController.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		0A684F76CEBB40E75688A2E0 /* Pods-RivalsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RivalsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RivalsUITests/Pods-RivalsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		330D12D81E8C38A500D1BBBC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		331BFAA71E95344D00CD7B16 /* Rivalry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rivalry.swift; sourceTree = "<group>"; };
 		334EB7671E92CEB4007286DA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		334EB76A1E92D1EB007286DA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		335DEEBF1E8C47D30057E46E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				334EB76A1E92D1EB007286DA /* User.swift */,
+				331BFAA71E95344D00CD7B16 /* Rivalry.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				BD4615E01E846F2F001F959B /* AppDelegate.swift in Sources */,
 				334EB76B1E92D1EB007286DA /* User.swift in Sources */,
 				334EB7681E92CEB4007286DA /* HomeViewController.swift in Sources */,
+				331BFAA81E95344D00CD7B16 /* Rivalry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
