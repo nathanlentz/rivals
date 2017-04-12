@@ -12,6 +12,8 @@
 		331BFAA81E95344D00CD7B16 /* Rivalry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331BFAA71E95344D00CD7B16 /* Rivalry.swift */; };
 		334EB7681E92CEB4007286DA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334EB7671E92CEB4007286DA /* HomeViewController.swift */; };
 		334EB76B1E92D1EB007286DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334EB76A1E92D1EB007286DA /* User.swift */; };
+		335111BE1E9E99570021ECAF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335111BD1E9E99570021ECAF /* MenuViewController.swift */; };
+		335111C01E9E99D30021ECAF /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335111BF1E9E99D30021ECAF /* MenuTableViewCell.swift */; };
 		335DEEC01E8C47D30057E46E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335DEEBF1E8C47D30057E46E /* RegisterViewController.swift */; };
 		336FA4A81E9E6B6C00045D98 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336FA4A71E9E6B6C00045D98 /* SWRevealViewController.m */; };
 		33C6A89E1E8C52B60044483F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33C6A89D1E8C52B60044483F /* GoogleService-Info.plist */; };
@@ -40,6 +42,8 @@
 		331BFAA71E95344D00CD7B16 /* Rivalry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rivalry.swift; sourceTree = "<group>"; };
 		334EB7671E92CEB4007286DA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		334EB76A1E92D1EB007286DA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		335111BD1E9E99570021ECAF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		335111BF1E9E99D30021ECAF /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		335DEEBF1E8C47D30057E46E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		336FA4A51E9E6B6C00045D98 /* Rivals-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rivals-Bridging-Header.h"; sourceTree = "<group>"; };
 		336FA4A61E9E6B6C00045D98 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 		330D12D61E8C32BA00D1BBBC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				335111BD1E9E99570021ECAF /* MenuViewController.swift */,
+				335111BF1E9E99D30021ECAF /* MenuTableViewCell.swift */,
 				BD4615E11E846F2F001F959B /* LoginViewController.swift */,
 				334EB7671E92CEB4007286DA /* HomeViewController.swift */,
 				335DEEBF1E8C47D30057E46E /* RegisterViewController.swift */,
@@ -363,8 +369,10 @@
 				BD4615E21E846F2F001F959B /* LoginViewController.swift in Sources */,
 				BD4615E01E846F2F001F959B /* AppDelegate.swift in Sources */,
 				334EB76B1E92D1EB007286DA /* User.swift in Sources */,
+				335111C01E9E99D30021ECAF /* MenuTableViewCell.swift in Sources */,
 				334EB7681E92CEB4007286DA /* HomeViewController.swift in Sources */,
 				331BFAA81E95344D00CD7B16 /* Rivalry.swift in Sources */,
+				335111BE1E9E99570021ECAF /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

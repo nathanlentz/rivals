@@ -49,7 +49,7 @@ class LoginViewController : UIViewController {
                 
                 if error == nil {
                     print("User logged in")
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC")
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController")
                     self.present(vc, animated: true, completion: nil)
                 }
                     

@@ -76,7 +76,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
                     self.ref.child("users").child(user.uid).setValue(userInfo)
                     
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeNavVC")
-                    self.present(vc, animated: true, completion: nil)
+                    let newFrontVC =  UINavigationController.init(rootViewController:vc)
+                    self.present(newFrontVC, animated: true, completion: nil)
                 }
                 
                 print("User created!")
