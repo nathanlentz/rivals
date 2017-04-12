@@ -38,6 +38,13 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
+    @IBAction func returnToLogin(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    
     /* Functions */
     
     // Ensure user information is valid

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rivals/RegisterViewController.swift"
-            timestampString = "512680727.243566"
+            timestampString = "513697142.163173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86">
+            startingLineNumber = "93"
+            endingLineNumber = "93">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rivals/RegisterViewController.swift"
-            timestampString = "512680727.243566"
+            timestampString = "513697142.163173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87">
+            startingLineNumber = "94"
+            endingLineNumber = "94">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -101,11 +101,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rivals/RegisterViewController.swift"
-            timestampString = "512680538.320204"
+            timestampString = "513697142.163173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "createUser()"
             landmarkType = "7">
          </BreakpointContent>
@@ -117,11 +117,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rivals/RegisterViewController.swift"
-            timestampString = "512680727.243566"
+            timestampString = "513697142.163173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "createUser()"
             landmarkType = "7">
          </BreakpointContent>

@@ -14,6 +14,7 @@ class User: NSObject {
     var userId: String!
     var fullName: String!
     var imagePath: String!
-    
+    var followerIds = [String]()
+    var followsIds = [String]()
     
 }
