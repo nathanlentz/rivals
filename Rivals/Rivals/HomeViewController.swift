@@ -13,19 +13,21 @@ class HomeViewController: UIViewController {
 
     var ref: FIRDatabaseReference!
     
+    
+    @IBOutlet weak var btnMenuButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ref = FIRDatabase.database().reference()
+        
+        self.navigationItem.title = "NAME"
+        btnMenuButton.target = revealViewController()
+        btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
         
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
