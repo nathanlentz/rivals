@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  Rivals
 //
-//  Created by X Code User on 4/3/17.
+//  Created by Nate Lentz on 4/3/17.
 //  Copyright © 2017 ntnl.design. All rights reserved.
 //
 
@@ -24,18 +24,29 @@ class HomeViewController: UIViewController {
                 self.present(vc, animated: true, completion: nil)
             }
         }
+        
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = FIRDatabase.database().reference()
         
-        self.navigationItem.title = "NAME"
         btnMenuButton.target = revealViewController()
         btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
+        ref = FIRDatabase.database().reference()
         
-        
+        let userID : String = (FIRAuth.auth()?.currentUser?.uid)!
+        print("User ID: " + userID)
+//        
+//        self.ref?.child("users").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
+//            
+//            let userName = (snapshot.value as! NSDictionary)["full name"] as! String
+//            print(userName)
+//            
+//            self.navigationItem.title = userName
+//            
+//        })
     }
 
 

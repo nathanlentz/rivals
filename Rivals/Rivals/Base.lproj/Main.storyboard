@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uqp-Z8-OqO">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uqp-Z8-OqO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -81,6 +81,8 @@
                     <connections>
                         <outlet property="EmailTextField" destination="auL-uk-tJM" id="myv-Ke-eff"/>
                         <outlet property="PasswordTextField" destination="gNG-ex-zPJ" id="8R9-jn-8fP"/>
+                        <outlet property="loginButton" destination="g7A-ck-hQw" id="Yrr-qX-Alx"/>
+                        <outlet property="signUpButton" destination="eKb-qc-1N4" id="cQ4-w6-NFY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -210,7 +212,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="TEST" id="oHP-HS-cDe">
-                        <barButtonItem key="leftBarButtonItem" image="ham-icon" id="FIU-jA-FV5"/>
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="FIU-jA-FV5"/>
                     </navigationItem>
                     <connections>
                         <outlet property="btnMenuButton" destination="FIU-jA-FV5" id="8bO-sN-ePo"/>
@@ -240,7 +242,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ahp-bK-MQs" id="a4Y-TT-JJk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UBJ-Cs-mDj">
@@ -313,6 +315,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ham-icon" width="22" height="22"/>
+        <image name="hamburger" width="27" height="27"/>
     </resources>
 </document>

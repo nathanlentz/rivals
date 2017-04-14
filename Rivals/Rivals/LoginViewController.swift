@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  Rivals
 //
-//  Created by lentzna on 3/23/17.
+//  Created by Nate Lentz on 3/23/17.
 //  Copyright © 2017 ntnl.design. All rights reserved.
 //
 
@@ -13,6 +13,9 @@ class LoginViewController : UIViewController {
 
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    
     var validationErrors = ""
     
     var firebaseRef: FIRDatabaseReference!
@@ -21,22 +24,19 @@ class LoginViewController : UIViewController {
         super.viewDidLoad()
         EmailTextField.placeholder = "Email_Text".localized
         PasswordTextField.placeholder = "Password_Text".localized
+        loginButton.layer.cornerRadius = 4
+        signUpButton.layer.cornerRadius = 4
         
         firebaseRef = FIRDatabase.database().reference()
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     /* Functions */
 
     @IBAction func loginDidPress(_ sender: UIButton) {
         if(self.EmailTextField.text == "" || self.PasswordTextField.text == ""){
             
-            // TODO remove alert for validation on text fields
             let alertController = UIAlertController(title: "Error", message: "Please enter email and password", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)

@@ -2,7 +2,7 @@
 //  RegisterViewController.swift
 //  Rivals
 //
-//  Created by X Code User on 3/29/17.
+//  Created by Nate Lentz on 3/29/17.
 //  Copyright © 2017 ntnl.design. All rights reserved.
 //
 
@@ -42,8 +42,6 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
         self.present(vc, animated: true, completion: nil)
     }
-    
-    
     
     /* Functions */
     

@@ -2,14 +2,18 @@
 //  MenuViewController.swift
 //  
 //
-//  Created by X Code User on 4/12/17.
-//
+//  Created by Nate Lentz on 4/12/17.
+//  Custom view for the menu drawer
 //
 
 import UIKit
+import Firebase
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // Create Firebase ref
+    var ref: FIRDatabaseReference!
+    
     // Array for storing menu item labels
     var menuNames:Array = [String]()
     // Array for storing menu item images
@@ -48,6 +52,14 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         if cell.labelMenuName.text! == "Logout" {
+            
+            
+            do {
+                try FIRAuth.auth()?.signOut()
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
+            
             let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
             self.present(vc, animated: true, completion: nil)
