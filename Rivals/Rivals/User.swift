@@ -7,17 +7,13 @@
 //
 
 import UIKit
-import Firebase
 
-
-struct User {
+class User: NSObject {
     
-    var userId: String!
-    var fullName: String!
-    var imagePath: String!
-    var wins: Int!
-    var losses: Int!
-    var followerIds = [String]()
-    var followsIds = [String]()
+    var uid: String?
+    var name: String?
+    var email: String?
+    var wins: Int?
+    var losses: Int?
     
 }

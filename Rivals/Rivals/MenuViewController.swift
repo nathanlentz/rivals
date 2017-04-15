@@ -62,7 +62,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if cell.labelMenuName.text! == menuNames[2] {
             let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "searchVC") as! FindUsersViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "searchVC") as! UsersTableViewController
             let newFrontVC =  UINavigationController.init(rootViewController:vc)
             revealViewController.pushFrontViewController(newFrontVC, animated: true)
         }

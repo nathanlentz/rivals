@@ -39,8 +39,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func returnToLogin(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
-        self.present(vc, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     /* Functions */
@@ -72,9 +71,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
                     let userInfo: [String : Any] = ["uid": user.uid, "name":self.nameField.text!, "email": self.emailField.text!, "wins": 0, "losses": 0]
                         
                     self.ref.child("profiles").child(user.uid).setValue(userInfo)
-                    self.dismiss(animated: true, completion: nil)
-//                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController")
-//                    self.present(vc, animated: true, completion: nil)
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController")
+                    self.present(vc, animated: true, completion: nil)
                 }
                 
                 print("User created!")
