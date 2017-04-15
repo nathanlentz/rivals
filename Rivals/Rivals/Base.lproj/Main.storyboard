@@ -267,6 +267,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnMenuButton" destination="FIU-jA-FV5" id="8bO-sN-ePo"/>
+                        <outlet property="lossesLabel" destination="YfO-NB-fae" id="s41-uX-8Vw"/>
+                        <outlet property="winsLabel" destination="jqf-n2-Bwx" id="Szo-Ea-V3o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLD-3c-TAK" userLabel="First Responder" sceneMemberID="firstResponder"/>

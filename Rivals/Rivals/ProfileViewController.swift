@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class ProfileViewController: UIViewController {
         btnMenuButton.target = revealViewController()
         btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
     }
+
 
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -99,5 +99,117 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rivals/HomeViewController.swift"
+            timestampString = "513977206.320104"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "checkIfUserIsLoggedIn()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rivals.HomeViewController.(checkIfUserIsLoggedIn () -&gt; ()).(closure #1)"
+                  moduleName = "Rivals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/natelentz/Projects/rivals/Rivals/Rivals/HomeViewController.swift"
+                  timestampString = "513976724.291954"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rivals.HomeViewController.(checkIfUserIsLoggedIn () -&gt; ()).(closure #1)"
+                  moduleName = "Rivals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/natelentz/Projects/rivals/Rivals/Rivals/HomeViewController.swift"
+                  timestampString = "513976724.29396"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "534">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rivals/HomeViewController.swift"
+            timestampString = "513977206.320104"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "checkIfUserIsLoggedIn()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rivals.HomeViewController.(checkIfUserIsLoggedIn () -&gt; ()).(closure #1)"
+                  moduleName = "Rivals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/natelentz/Projects/rivals/Rivals/Rivals/HomeViewController.swift"
+                  timestampString = "513976829.555353"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rivals.HomeViewController.(checkIfUserIsLoggedIn () -&gt; ()).(closure #1)"
+                  moduleName = "Rivals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/natelentz/Projects/rivals/Rivals/Rivals/HomeViewController.swift"
+                  timestampString = "513976829.556954"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "534">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rivals/HomeViewController.swift"
+            timestampString = "513977206.320104"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "checkIfUserIsLoggedIn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
