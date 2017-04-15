@@ -16,39 +16,46 @@ class HomeViewController: UIViewController {
     // Reference for menu button
     @IBOutlet weak var btnMenuButton: UIBarButtonItem!
     
-    override func viewWillAppear(_ animated: Bool) {
-        FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
-            // If we arent authenticated, prompt login/register
-            if user == nil {
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
-        
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ref = FIRDatabase.database().reference()
+        checkIfUserIsLoggedIn()
+        
+        
         btnMenuButton.target = revealViewController()
         btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+    
         
-        ref = FIRDatabase.database().reference()
-        
-        let userID : String = (FIRAuth.auth()?.currentUser?.uid)!
-        print("User ID: " + userID)
-//        
-//        self.ref?.child("users").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
-//            
-//            let userName = (snapshot.value as! NSDictionary)["full name"] as! String
-//            print(userName)
-//            
-//            self.navigationItem.title = userName
-//            
-//        })
+    }
+    
+    func checkIfUserIsLoggedIn(){
+        if FIRAuth.auth()?.currentUser?.uid == nil {
+            perform(#selector(handleLogout), with: nil, afterDelay: 0)
+        } else {
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            ref.child("profiles").child(uid!).observe(.value, with: { (snapshot) in
+                
+                if let dictionary = snapshot.value as? [String: AnyObject]{
+                    self.navigationItem.title = dictionary["name"] as? String
+                }
+                
+                
+                
+            }, withCancel: nil)
+        }
     }
 
+    func handleLogout(){
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginVC")
+        self.present(vc, animated: true, completion: nil)
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 

@@ -23,7 +23,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         // Drawer Menu Items
-        menuNames = ["Home", "Settings", "Logout"]
+        menuNames = ["Profile", "Home", "Search Users", "Logout"]
+        
+        // Get name of current user
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,6 +44,13 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         let revealViewController:SWRevealViewController = self.revealViewController()
         
         let cell:MenuTableViewCell = tableView.cellForRow(at: indexPath) as! MenuTableViewCell
+    
+        if cell.labelMenuName.text! == "Profile" {
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "profileVC") as! ProfileViewController
+            let newFrontVC =  UINavigationController.init(rootViewController:vc)
+            revealViewController.pushFrontViewController(newFrontVC, animated: true)
+        }
         
         if cell.labelMenuName.text! == "Home"{
             
@@ -51,9 +60,16 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             revealViewController.pushFrontViewController(newFrontVC, animated: true)
         }
         
+        if cell.labelMenuName.text! == menuNames[2] {
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "searchVC") as! FindUsersViewController
+            let newFrontVC =  UINavigationController.init(rootViewController:vc)
+            revealViewController.pushFrontViewController(newFrontVC, animated: true)
+        }
+        
         if cell.labelMenuName.text! == "Logout" {
             
-            
+            // execute logout
             do {
                 try FIRAuth.auth()?.signOut()
             } catch let signOutError as NSError {
@@ -63,19 +79,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
             self.present(vc, animated: true, completion: nil)
-            // execute logout
         }
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

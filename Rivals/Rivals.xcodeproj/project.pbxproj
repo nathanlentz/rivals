@@ -18,6 +18,9 @@
 		336FA4A81E9E6B6C00045D98 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336FA4A71E9E6B6C00045D98 /* SWRevealViewController.m */; };
 		33C6A89E1E8C52B60044483F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33C6A89D1E8C52B60044483F /* GoogleService-Info.plist */; };
 		33C6A8A31E8C538D0044483F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C6A8A11E8C538D0044483F /* Main.storyboard */; };
+		39FD5F5A1EA26427004102CE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F591EA26427004102CE /* ProfileViewController.swift */; };
+		39FD5F5C1EA266B5004102CE /* CreateRivalryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F5B1EA266B5004102CE /* CreateRivalryViewController.swift */; };
+		39FD5F5E1EA27383004102CE /* FindUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F5D1EA27383004102CE /* FindUsersViewController.swift */; };
 		A9B0C9DC3A9DDEF04F804915 /* Pods_Rivals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369D7CBE31B9C562301653D2 /* Pods_Rivals.framework */; };
 		BD4615E01E846F2F001F959B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4615DF1E846F2F001F959B /* AppDelegate.swift */; };
 		BD4615E21E846F2F001F959B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4615E11E846F2F001F959B /* LoginViewController.swift */; };
@@ -51,6 +54,9 @@
 		33C6A89D1E8C52B60044483F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		33C6A8A21E8C538D0044483F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		369D7CBE31B9C562301653D2 /* Pods_Rivals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rivals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39FD5F591EA26427004102CE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		39FD5F5B1EA266B5004102CE /* CreateRivalryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRivalryViewController.swift; sourceTree = "<group>"; };
+		39FD5F5D1EA27383004102CE /* FindUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindUsersViewController.swift; sourceTree = "<group>"; };
 		43BC8414D5D2361464597D36 /* Pods-RivalsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RivalsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RivalsUITests/Pods-RivalsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7164539D554874F76CDD051A /* Pods-Rivals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rivals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rivals/Pods-Rivals.release.xcconfig"; sourceTree = "<group>"; };
 		8694BBE497CAD366B4ED9234 /* Pods_RivalsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +109,9 @@
 				BD4615E11E846F2F001F959B /* LoginViewController.swift */,
 				334EB7671E92CEB4007286DA /* HomeViewController.swift */,
 				335DEEBF1E8C47D30057E46E /* RegisterViewController.swift */,
+				39FD5F591EA26427004102CE /* ProfileViewController.swift */,
+				39FD5F5D1EA27383004102CE /* FindUsersViewController.swift */,
+				39FD5F5B1EA266B5004102CE /* CreateRivalryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -366,8 +375,11 @@
 			files = (
 				336FA4A81E9E6B6C00045D98 /* SWRevealViewController.m in Sources */,
 				335DEEC01E8C47D30057E46E /* RegisterViewController.swift in Sources */,
+				39FD5F5A1EA26427004102CE /* ProfileViewController.swift in Sources */,
+				39FD5F5C1EA266B5004102CE /* CreateRivalryViewController.swift in Sources */,
 				BD4615E21E846F2F001F959B /* LoginViewController.swift in Sources */,
 				BD4615E01E846F2F001F959B /* AppDelegate.swift in Sources */,
+				39FD5F5E1EA27383004102CE /* FindUsersViewController.swift in Sources */,
 				334EB76B1E92D1EB007286DA /* User.swift in Sources */,
 				335111C01E9E99D30021ECAF /* MenuTableViewCell.swift in Sources */,
 				334EB7681E92CEB4007286DA /* HomeViewController.swift in Sources */,
