@@ -25,7 +25,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Drawer Menu Items
         menuNames = ["Profile", "Home", "Search Users", "Logout"]
         
-        // Get name of current user
+        // TODO Get name of current user to add to porfolio
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

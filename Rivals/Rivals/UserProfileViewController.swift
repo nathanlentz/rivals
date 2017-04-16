@@ -18,9 +18,7 @@ class UserProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textLabel.text! = user.name!
-        
-        
+        self.navigationItem.title = user.name!
 
     }
 
