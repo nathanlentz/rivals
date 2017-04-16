@@ -17,6 +17,7 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
     @IBOutlet var addPlayerTableView: UITableView!
     var users = [NSDictionary?]()
     var filteredUsers = [NSDictionary?]()
+    var selectedUser = User()
     
     var ref = FIRDatabase.database().reference()
     
@@ -33,18 +34,18 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
         
         ref.child("profiles").queryOrdered(byChild: "name").observe(.childAdded, with: { (snapshot) in
         
-            self.users.append(snapshot.value as? NSDictionary)
-            
-            self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
+            if let dict = snapshot.value as? [String: AnyObject] {
+                // Dont add user if it is current user
+                if dict["uid"] as? String != FIRAuth.auth()?.currentUser?.uid {
+                    self.users.append(snapshot.value as? NSDictionary)
+                    self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
+                }
+            }
             
         }) { (error) in
             print(error.localizedDescription)
         
         }
-    
-            
-
-        
     }
     
     func filterUsers(searchText: String){
@@ -88,9 +89,30 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
         cell.textLabel?.text = user?["name"] as? String
         cell.detailTextLabel?.text = user?["email"] as? String
         
-        
-        
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // need to unwind segue here
+        let user: NSDictionary?
+        if searchController.isActive && searchController.searchBar.text != "" {
+            user = filteredUsers[indexPath.row]!
+        }
+        else {
+            user = users[indexPath.row]!
+        }
+        
+        self.selectedUser.uid = user?["uid"] as? String
+        self.selectedUser.name = user?["name"] as? String
+        self.selectedUser.wins = user?["wins"] as? Int
+        self.selectedUser.losses = user?["losses"] as? Int
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
     }
 
 

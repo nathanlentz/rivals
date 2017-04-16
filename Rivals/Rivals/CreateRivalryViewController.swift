@@ -11,18 +11,36 @@ import Firebase
 
 class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+    @IBOutlet weak var playerTableView: UITableView!
+    
     var ref: FIRDatabaseReference!
     
     // Array of users for adding to table view
     var players:Array = [User]()
     
-    
+    let cellId = "cellId"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = FIRDatabase.database().reference()
 
+    }
+    
+    @IBAction func unwindAddPlayerView(segue: UIStoryboardSegue){
+        if let sourceVC = segue.source as? FindUserTableViewController {
+            if !players.contains(sourceVC.selectedUser) {
+                self.players.append(sourceVC.selectedUser)
+            }
+        }
+        
+        self.playerTableView.reloadData()
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
