@@ -12,15 +12,14 @@ import Firebase
 class HomeViewController: UIViewController {
 
     var ref: FIRDatabaseReference!
+    var currentUser = User()
     
     @IBOutlet weak var lossesLabel: UILabel!
     @IBOutlet weak var winsLabel: UILabel!
-    
-    
-    var currentUser = User()
-    
+
     // Reference for menu button
     @IBOutlet weak var btnMenuButton: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

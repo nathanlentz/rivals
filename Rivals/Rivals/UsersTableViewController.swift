@@ -73,7 +73,18 @@ class UsersTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "userDetailSegue", sender: users[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let segueVC = segue.destination as! UserProfileViewController
+        segueVC.user = sender as! User
+    }
+    
 }
+
 
 class UserCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
