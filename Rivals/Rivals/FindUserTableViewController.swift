@@ -34,13 +34,17 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
         
         ref.child("profiles").queryOrdered(byChild: "name").observe(.childAdded, with: { (snapshot) in
         
-            if let dict = snapshot.value as? [String: AnyObject] {
-                // Dont add user if it is current user
-                if dict["uid"] as? String != FIRAuth.auth()?.currentUser?.uid {
-                    self.users.append(snapshot.value as? NSDictionary)
-                    self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
-                }
-            }
+            // Include code below to not include self in list
+//            if let dict = snapshot.value as? [String: AnyObject] {
+//                // Dont add user if it is current user
+//                if dict["uid"] as? String != FIRAuth.auth()?.currentUser?.uid {
+//                    self.users.append(snapshot.value as? NSDictionary)
+//                    self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
+//                }
+//            }
+            
+            self.users.append(snapshot.value as? NSDictionary)
+            self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
             
         }) { (error) in
             print(error.localizedDescription)

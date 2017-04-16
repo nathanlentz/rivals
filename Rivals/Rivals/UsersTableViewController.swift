@@ -35,6 +35,7 @@ class UsersTableViewController: UITableViewController {
     
     // Retrieve all users (except current user)
     func fetchUsers(){
+        
         ref.child("profiles").observe(.childAdded, with: { (snapshot) in
         // Add users into array and use that to populate rows
             if let dict = snapshot.value as? [String: AnyObject] {

@@ -386,9 +386,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Rivlary" id="kgf-gG-X4W">
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="rdP-8o-Q0K"/>
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="rdP-8o-Q0K">
+                            <connections>
+                                <action selector="startRivalryDidPress:" destination="rpa-k7-XeO" id="vOh-f3-Hl8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="gameNameText" destination="di1-fT-97g" id="1Cw-od-lQb"/>
                         <outlet property="playerTableView" destination="ryu-9I-sQT" id="q9J-w1-aFt"/>
                         <outlet property="searchDisplayController" destination="L6z-bS-0NW" id="Sub-oT-eb1"/>
                     </connections>

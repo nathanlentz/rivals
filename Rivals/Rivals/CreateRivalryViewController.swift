@@ -17,9 +17,9 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
     
     // Array of users for adding to table view
     var players:Array = [User]()
-    
-    let cellId = "cellId"
 
+    
+    @IBOutlet weak var gameNameText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,35 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
         self.playerTableView.reloadData()
         
     }
+    
+    @IBAction func startRivalryDidPress(_ sender: Any) {
+        createRivalry()
+        dismiss(animated: true, completion: nil)
+    }
+    // Create a rivalry given current users in list (plus current user) and string as board game name
+    func createRivalry(){
+        if gameNameText.text != "" && players.count > 1 {
+            let currentUserId = FIRAuth.auth()?.currentUser?.uid
+            
+            var playerIds = [String]();
+            for player in players {
+                playerIds.append(player.uid!)
+            }
+            
+            if POSTNewRivlary(creatorId: currentUserId!, gameName: gameNameText.text!, players: playerIds) {
+                print("Yay")
+            }
+            else {
+                print("Failed to submit")
+            }
+            
+            // TODO init game history and comments field, etc
+            
+        }
+    }
+    
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -72,11 +101,5 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
 
-    
-    
-    
-    
-    
 }
