@@ -132,13 +132,15 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dL-RD-DXD">
                                 <rect key="frame" x="135" y="617" width="105" height="30"/>
-                                <state key="normal" title="Return to Login"/>
+                                <state key="normal" title="Return to Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="returnToLogin:" destination="cqg-uk-HTN" eventType="touchUpInside" id="qeQ-dt-Kgo"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vUJ-7q-Ow5">
-                                <rect key="frame" x="47" y="100" width="281" height="214"/>
+                                <rect key="frame" x="47" y="170" width="281" height="214"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="9Nv-Sy-r6i">
                                         <rect key="frame" x="0.0" y="0.0" width="281" height="30"/>
@@ -171,10 +173,13 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4j-P5-zv9">
                                         <rect key="frame" x="0.0" y="184" width="281" height="30"/>
-                                        <state key="normal" title="Register"/>
+                                        <color key="backgroundColor" red="0.0" green="0.83734809027777779" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="0"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="registerButton:" destination="cqg-uk-HTN" eventType="touchUpInside" id="fd8-XQ-0r8"/>
@@ -182,14 +187,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="9kL-td-9IR">
+                                <rect key="frame" x="137" y="36" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="cZ6-RW-fjx"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vUJ-7q-Ow5" firstAttribute="centerX" secondItem="LgI-MO-euv" secondAttribute="centerX" id="KRH-4M-Klv"/>
                             <constraint firstItem="7dL-RD-DXD" firstAttribute="centerX" secondItem="vUJ-7q-Ow5" secondAttribute="centerX" id="Mg6-0e-z3q"/>
                             <constraint firstAttribute="bottom" secondItem="7dL-RD-DXD" secondAttribute="bottom" constant="20" symbolic="YES" id="MzF-VP-SBz"/>
+                            <constraint firstItem="9kL-td-9IR" firstAttribute="centerX" secondItem="LgI-MO-euv" secondAttribute="centerX" id="PSD-Rb-VoD"/>
+                            <constraint firstItem="vUJ-7q-Ow5" firstAttribute="top" secondItem="9kL-td-9IR" secondAttribute="bottom" constant="34" id="Qbl-eN-DpK"/>
+                            <constraint firstItem="9kL-td-9IR" firstAttribute="top" secondItem="T4Z-hS-24L" secondAttribute="bottom" constant="16" id="YR7-GM-Hxe"/>
+                            <constraint firstItem="vUJ-7q-Ow5" firstAttribute="top" secondItem="T4Z-hS-24L" secondAttribute="bottom" constant="150" id="aq2-hI-rxK"/>
                             <constraint firstItem="vUJ-7q-Ow5" firstAttribute="width" secondItem="LgI-MO-euv" secondAttribute="width" multiplier="3:4" id="qe7-9E-UbI"/>
-                            <constraint firstItem="vUJ-7q-Ow5" firstAttribute="top" secondItem="LgI-MO-euv" secondAttribute="top" constant="100" id="zmd-zQ-zUc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -197,6 +211,7 @@
                         <outlet property="emailField" destination="p1p-UE-xeE" id="j7p-ug-pct"/>
                         <outlet property="nameField" destination="YxR-gf-Pfd" id="uuz-6G-xox"/>
                         <outlet property="passwordField" destination="nkA-ST-ga3" id="TA8-dA-M3a"/>
+                        <outlet property="profileImageView" destination="9kL-td-9IR" id="tfW-b9-kHv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZk-ZQ-sEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -410,6 +425,24 @@
             </objects>
             <point key="canvasLocation" x="3296.8000000000002" y="142.57871064467767"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="fXf-HG-yU9">
+            <objects>
+                <viewController id="PAh-25-cZ5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7B0-Cb-7jl"/>
+                        <viewControllerLayoutGuide type="bottom" id="l5o-bX-AE7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TJW-mK-xLk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J19-RL-Fyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4049" y="143"/>
+        </scene>
         <!--Add Player-->
         <scene sceneID="NAW-Fn-8YF">
             <objects>
@@ -578,7 +611,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDj-HC-luK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3396" y="1591.7541229385308"/>
+            <point key="canvasLocation" x="3282" y="1594"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Qbl-Tf-G2a">
@@ -596,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQg-pP-VPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4202" y="1594"/>
+            <point key="canvasLocation" x="4049" y="1594"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="N5C-EB-wSg">
@@ -747,5 +780,6 @@
     <resources>
         <image name="hamburger" width="27" height="27"/>
         <image name="noun_556802_cc" width="700" height="700"/>
+        <image name="profile" width="512" height="512"/>
     </resources>
 </document>

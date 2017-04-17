@@ -28,6 +28,9 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
 
     }
     
+    /**
+     We use an unwind segue to get the selected user from player search
+     */
     @IBAction func unwindAddPlayerView(segue: UIStoryboardSegue){
         if let sourceVC = segue.source as? FindUserTableViewController {
             if !players.contains(sourceVC.selectedUser) {
@@ -43,7 +46,10 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
         createRivalry()
         dismiss(animated: true, completion: nil)
     }
-    // Create a rivalry given current users in list (plus current user) and string as board game name
+    
+    /**
+     Create a rivalry given current users in list (plus current user) and string as board game name
+     */
     func createRivalry(){
         if gameNameText.text != "" && players.count > 1 {
             let currentUserId = FIRAuth.auth()?.currentUser?.uid
@@ -53,7 +59,7 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
                 playerIds.append(player.uid!)
             }
             
-            if POSTNewRivlary(creatorId: currentUserId!, gameName: gameNameText.text!, players: playerIds) {
+            if createNewRivlary(creatorId: currentUserId!, gameName: gameNameText.text!, players: playerIds) {
                 print("Yay")
             }
             else {
@@ -64,8 +70,6 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
             
         }
     }
-    
-    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {

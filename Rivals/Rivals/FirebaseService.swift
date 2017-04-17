@@ -14,6 +14,13 @@ import Firebase
 var ref = FIRDatabase.database().reference()
 
 
+func createUserInDatabase(uid: String, userInfo: [String : Any]) {
+    
+    ref.child("profiles").child(uid).setValue(userInfo)
+    
+}
+
+
 /**
 Return an array of all users within the Firebase Database
  */
@@ -53,13 +60,13 @@ func getAllRivalries() -> Array<Rivalry> {
 /**
  Attepts to POST a new rivalry to firebase
  */
-func POSTNewRivlary(creatorId: String, gameName: String, players: [String]) -> Bool {
+func createNewRivlary(creatorId: String, gameName: String, players: [String]) -> Bool {
     var success = true
     let key = ref.child("rivalries").childByAutoId().key
     
     
     // TODO: Add init for historical data
-    let rivalryInfo: [String : Any] = ["rivalry_key": key, "creator_id": creatorId, "game_name": gameName, "players": players]
+    let rivalryInfo: [String : Any] = ["rivalry_key": key, "creator_id": creatorId, "game_name": gameName, "players": players, "In Progress": true]
     
     ref.updateChildValues(["profiles/\(creatorId)/rivalries_in_progress": rivalryInfo, "rivalries/\(key)": rivalryInfo], withCompletionBlock: { (error) in
         print(error)
@@ -72,7 +79,7 @@ func POSTNewRivlary(creatorId: String, gameName: String, players: [String]) -> B
 /**
  Attepts to GET all rivalries from firebase given a uid
  */
-func GETRivalry(userId: String) -> Array<Rivalry> {
+func getRivalry(userId: String) -> Array<Rivalry> {
     let rivalries = [Rivalry]()
     
     // TODO: getAllRivalries()
@@ -82,8 +89,35 @@ func GETRivalry(userId: String) -> Array<Rivalry> {
     
 }
 
+/**
+ Attepts to GET all in progress rivalries from firebase given a uid
+ */
+func getInProgressRivalries(userId: String) -> Array<Rivalry> {
+    let rivalries = [Rivalry]()
+    
+    // TODO: getAllRivalries()
+    // Filter all rivalries that are "In Progress" by a user
+    
+    return rivalries
+    
+}
 
-func POSTupdateRivalry(rivalryId: String) {
+/**
+ Attepts to GET all finished rivalries from firebase given a uid
+ */
+func getFinishedRivalries(userId: String) -> Array<Rivalry> {
+    let rivalries = [Rivalry]()
+    
+    // TODO: getAllRivalries()
+    // Filter all rivalries that are "finished" by a user
+    
+    return rivalries
+}
+
+/**
+ Update an existing rivalry
+ */
+func updateRivalry(rivalryId: String, rivalryStatus: Bool, winnerIds: [String]) {
     
 }
 
