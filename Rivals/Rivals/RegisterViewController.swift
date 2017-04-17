@@ -102,10 +102,11 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                 
                 // Generate unique string for naming in firebase storage
                 let imgName = NSUUID().uuidString
-                let storageRef = FIRStorage.storage().reference().child(imgName)
+                let storageRef = FIRStorage.storage().reference().child("profile_images").child(imgName)
                 
-                if let uploadData = UIImagePNGRepresentation(self.profileImageView.image!) {
-                    
+                // Compress to 10% of quality
+                if let uploadData = UIImageJPEGRepresentation(self.profileImageView.image!, 0.1) {
+    
                     storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
                         if error != nil {
                             print(error!)

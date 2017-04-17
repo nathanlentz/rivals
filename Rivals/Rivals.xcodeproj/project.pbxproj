@@ -105,7 +105,6 @@
 		330D12D51E8C32B000D1BBBC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				39FD5F671EA3F878004102CE /* FirebaseService.swift */,
 				39FD5F631EA3C814004102CE /* AddPlayerViewCell.swift */,
 				335111BF1E9E99D30021ECAF /* MenuTableViewCell.swift */,
 				334EB76A1E92D1EB007286DA /* User.swift */,
@@ -134,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				39FD5F6B1EA45DF4004102CE /* Extensions.swift */,
+				39FD5F671EA3F878004102CE /* FirebaseService.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
