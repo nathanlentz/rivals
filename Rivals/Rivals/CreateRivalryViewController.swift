@@ -85,8 +85,15 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddPlayerViewCell") as! AddPlayerViewCell
         
         // TODO: Add Player image and add player wins/losses
+        let user = players[indexPath.row]
         cell.userName.text! = players[indexPath.row].name!
         cell.winsLosses.text! = "Wins / Losses"
+        cell.profileImage.image = UIImage(named: "profile")
+        cell.profileImage.contentMode = .scaleAspectFill
+        
+        if let userProfileImageUrl = user.profileImageUrl {
+            cell.profileImage.loadImageUsingCacheWithUrlString(urlString: userProfileImageUrl)
+        }
         
         return cell
     }

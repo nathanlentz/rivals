@@ -25,6 +25,7 @@
 		39FD5F641EA3C814004102CE /* AddPlayerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F631EA3C814004102CE /* AddPlayerViewCell.swift */; };
 		39FD5F661EA3CF13004102CE /* FindUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F651EA3CF13004102CE /* FindUserTableViewController.swift */; };
 		39FD5F681EA3F878004102CE /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F671EA3F878004102CE /* FirebaseService.swift */; };
+		39FD5F6C1EA45DF4004102CE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F6B1EA45DF4004102CE /* Extensions.swift */; };
 		A9B0C9DC3A9DDEF04F804915 /* Pods_Rivals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369D7CBE31B9C562301653D2 /* Pods_Rivals.framework */; };
 		BD4615E01E846F2F001F959B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4615DF1E846F2F001F959B /* AppDelegate.swift */; };
 		BD4615E21E846F2F001F959B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4615E11E846F2F001F959B /* LoginViewController.swift */; };
@@ -65,6 +66,7 @@
 		39FD5F631EA3C814004102CE /* AddPlayerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerViewCell.swift; sourceTree = "<group>"; };
 		39FD5F651EA3CF13004102CE /* FindUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindUserTableViewController.swift; sourceTree = "<group>"; };
 		39FD5F671EA3F878004102CE /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		39FD5F6B1EA45DF4004102CE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		43BC8414D5D2361464597D36 /* Pods-RivalsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RivalsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RivalsUITests/Pods-RivalsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7164539D554874F76CDD051A /* Pods-Rivals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rivals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rivals/Pods-Rivals.release.xcconfig"; sourceTree = "<group>"; };
 		8694BBE497CAD366B4ED9234 /* Pods_RivalsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,14 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		39FD5F6A1EA45DE2004102CE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				39FD5F6B1EA45DF4004102CE /* Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		50796C20335294E74DDBE26E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 		BD4615DE1E846F2F001F959B /* Rivals */ = {
 			isa = PBXGroup;
 			children = (
+				39FD5F6A1EA45DE2004102CE /* Helpers */,
 				330D12D61E8C32BA00D1BBBC /* Controllers */,
 				330D12D51E8C32B000D1BBBC /* Models */,
 				BD4615DF1E846F2F001F959B /* AppDelegate.swift */,
@@ -399,6 +410,7 @@
 				39FD5F621EA3BADD004102CE /* UserProfileViewController.swift in Sources */,
 				335111C01E9E99D30021ECAF /* MenuTableViewCell.swift in Sources */,
 				334EB7681E92CEB4007286DA /* HomeViewController.swift in Sources */,
+				39FD5F6C1EA45DF4004102CE /* Extensions.swift in Sources */,
 				331BFAA81E95344D00CD7B16 /* Rivalry.swift in Sources */,
 				335111BE1E9E99570021ECAF /* MenuViewController.swift in Sources */,
 			);

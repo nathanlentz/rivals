@@ -338,34 +338,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9T7-9k-zet">
-                                                    <rect key="frame" x="8" y="6" width="30" height="30"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins / Losses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47D-MD-9t9">
-                                                    <rect key="frame" x="41" y="19" width="97" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9x-bj-JaL">
-                                                    <rect key="frame" x="41" y="6" width="97" height="21"/>
+                                                    <rect key="frame" x="57" y="3" width="97" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins / Losses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47D-MD-9t9">
+                                                    <rect key="frame" x="57" y="19" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9T7-9k-zet">
+                                                    <rect key="frame" x="19" y="6" width="30" height="30"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="47D-MD-9t9" firstAttribute="leading" secondItem="MGS-wI-0eE" secondAttribute="leading" constant="41" id="4i4-15-oYf"/>
+                                                <constraint firstItem="47D-MD-9t9" firstAttribute="leading" secondItem="MGS-wI-0eE" secondAttribute="leading" constant="57" id="4i4-15-oYf"/>
                                                 <constraint firstItem="9T7-9k-zet" firstAttribute="top" secondItem="MGS-wI-0eE" secondAttribute="top" constant="6" id="8Nh-9e-3zy"/>
-                                                <constraint firstItem="47D-MD-9t9" firstAttribute="leading" secondItem="9T7-9k-zet" secondAttribute="trailing" constant="3" id="D2G-aT-Rup"/>
-                                                <constraint firstItem="9T7-9k-zet" firstAttribute="leading" secondItem="MGS-wI-0eE" secondAttribute="leading" constant="8" id="SIj-ee-BAm"/>
+                                                <constraint firstItem="47D-MD-9t9" firstAttribute="leading" secondItem="9T7-9k-zet" secondAttribute="trailing" constant="8" id="D2G-aT-Rup"/>
+                                                <constraint firstItem="9T7-9k-zet" firstAttribute="leading" secondItem="MGS-wI-0eE" secondAttribute="leading" constant="19" id="SIj-ee-BAm"/>
                                                 <constraint firstItem="47D-MD-9t9" firstAttribute="top" secondItem="MGS-wI-0eE" secondAttribute="topMargin" constant="11" id="UNw-cf-SyI"/>
-                                                <constraint firstItem="f9x-bj-JaL" firstAttribute="top" secondItem="9T7-9k-zet" secondAttribute="top" id="YQh-xa-3p7"/>
+                                                <constraint firstItem="f9x-bj-JaL" firstAttribute="top" secondItem="9T7-9k-zet" secondAttribute="top" constant="-3" id="YQh-xa-3p7"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="47D-MD-9t9" secondAttribute="bottom" constant="-4.5" id="c6S-2O-cGM"/>
                                                 <constraint firstAttribute="bottom" secondItem="9T7-9k-zet" secondAttribute="bottom" constant="7.5" id="h6T-M5-15F"/>
                                                 <constraint firstItem="47D-MD-9t9" firstAttribute="trailing" secondItem="f9x-bj-JaL" secondAttribute="trailing" id="m3b-Dt-qDW"/>
                                                 <constraint firstItem="47D-MD-9t9" firstAttribute="leading" secondItem="f9x-bj-JaL" secondAttribute="leading" id="t1r-g6-NEt"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="profileImage" destination="9T7-9k-zet" id="ntQ-uz-fBh"/>

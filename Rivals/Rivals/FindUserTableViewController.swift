@@ -111,6 +111,7 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
         self.selectedUser.name = user?["name"] as? String
         self.selectedUser.wins = user?["wins"] as? Int
         self.selectedUser.losses = user?["losses"] as? Int
+        self.selectedUser.profileImageUrl = user?["profileImageUrl"] as? String
         
         dismiss(animated: true, completion: nil)
     }

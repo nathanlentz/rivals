@@ -15,5 +15,6 @@ class User: NSObject {
     var email: String?
     var wins: Int?
     var losses: Int?
+    var profileImageUrl: String?
     
 }
