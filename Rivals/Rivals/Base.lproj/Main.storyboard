@@ -246,26 +246,65 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqf-n2-Bwx">
-                                <rect key="frame" x="16" y="151" width="343" height="21"/>
+                                <rect key="frame" x="16" y="151" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Losses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-ag-wAb">
-                                <rect key="frame" x="0.0" y="180" width="375" height="29"/>
+                                <rect key="frame" x="0.0" y="179.5" width="375" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfO-NB-fae">
-                                <rect key="frame" x="0.0" y="217" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="216.5" width="375" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="Xwa-LZ-kbc">
+                                <rect key="frame" x="62" y="397" width="250" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ju-rg-cUs">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="View Rivalries in Progress">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="d8R-gd-eZ8" kind="presentation" id="4a1-E0-i9Y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5g-NM-nif">
+                                        <rect key="frame" x="0.0" y="66" width="250" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="View Rivalry History">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="ozI-eE-6A4" kind="presentation" id="jlE-5f-mr4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Xwa-LZ-kbc" firstAttribute="width" secondItem="NpJ-cX-omC" secondAttribute="width" multiplier="2:3" id="3Ar-Ai-TLE"/>
                             <constraint firstItem="dJx-Ax-FzN" firstAttribute="width" secondItem="NpJ-cX-omC" secondAttribute="width" id="3Dz-wl-HUJ"/>
                             <constraint firstItem="jqf-n2-Bwx" firstAttribute="trailing" secondItem="NpJ-cX-omC" secondAttribute="trailingMargin" id="7LU-dY-cTM"/>
                             <constraint firstItem="YfO-NB-fae" firstAttribute="width" secondItem="NpJ-cX-omC" secondAttribute="width" id="Agf-z5-Zqw"/>
@@ -279,6 +318,8 @@
                             <constraint firstAttribute="trailing" secondItem="dJx-Ax-FzN" secondAttribute="trailing" id="WWN-pC-B0T"/>
                             <constraint firstItem="jqf-n2-Bwx" firstAttribute="top" secondItem="dJx-Ax-FzN" secondAttribute="bottom" constant="8" id="d7y-VB-ob9"/>
                             <constraint firstItem="jqf-n2-Bwx" firstAttribute="leading" secondItem="NpJ-cX-omC" secondAttribute="leadingMargin" id="hpu-Zp-MK9"/>
+                            <constraint firstItem="Xwa-LZ-kbc" firstAttribute="centerX" secondItem="NpJ-cX-omC" secondAttribute="centerX" id="n04-oI-4tL"/>
+                            <constraint firstItem="yhk-bW-H8c" firstAttribute="top" secondItem="Xwa-LZ-kbc" secondAttribute="bottom" constant="174" id="xF1-CQ-t81"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="oHP-HS-cDe">
@@ -344,7 +385,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ifp-bO-YmZ" id="MGS-wI-0eE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9x-bj-JaL">
@@ -443,10 +484,10 @@
             </objects>
             <point key="canvasLocation" x="3296.8000000000002" y="142.57871064467767"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Rivalry Results View Controller-->
         <scene sceneID="fXf-HG-yU9">
             <objects>
-                <viewController id="PAh-25-cZ5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newRivalryResultsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PAh-25-cZ5" customClass="CreateRivalryResultsViewController" customModule="Rivals" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7B0-Cb-7jl"/>
                         <viewControllerLayoutGuide type="bottom" id="l5o-bX-AE7"/>
@@ -454,12 +495,101 @@
                     <view key="view" contentMode="scaleToFill" id="TJW-mK-xLk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SUCCESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yk-yg-e4R">
+                                <rect key="frame" x="149" y="122" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTr-Wb-GzC">
+                                <rect key="frame" x="143" y="318" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Return home"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhn-vH-i9f">
+                                <rect key="frame" x="146" y="421" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Rivalry"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J19-RL-Fyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4049" y="143"/>
+            <point key="canvasLocation" x="4048.8000000000002" y="142.57871064467767"/>
+        </scene>
+        <!--Rivalries In Progress Table View Controller-->
+        <scene sceneID="5ZB-R3-HWi">
+            <objects>
+                <tableViewController storyboardIdentifier="inProgressRivalriesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gpp-ud-8pc" customClass="RivalriesInProgressTableViewController" customModule="Rivals" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yz0-J4-vYX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bEB-OV-1Cg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEB-OV-1Cg" id="4Me-SP-kFi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gpp-ud-8pc" id="QV7-ce-nak"/>
+                            <outlet property="delegate" destination="Gpp-ud-8pc" id="ea9-og-zw2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="jV5-hO-GO3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Qch-mz-C2s">
+                            <connections>
+                                <action selector="doneButtonDidPress:" destination="Gpp-ud-8pc" id="jMZ-CM-kTP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rkX-LK-7LF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6012" y="143"/>
+        </scene>
+        <!--Rivalries Completed Table View Controller-->
+        <scene sceneID="c5D-KH-BP9">
+            <objects>
+                <tableViewController storyboardIdentifier="completedRivalriesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JAc-Ot-S0C" customClass="RivalriesCompletedTableViewController" customModule="Rivals" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fCc-ug-q10">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bMk-c6-pIl">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bMk-c6-pIl" id="YlZ-tD-bPT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JAc-Ot-S0C" id="wvc-Wc-JZx"/>
+                            <outlet property="delegate" destination="JAc-Ot-S0C" id="Vf3-SI-UMH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ika-7P-wLk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6r9-gy-0Mo">
+                            <connections>
+                                <action selector="doneButtonDidPress:" destination="JAc-Ot-S0C" id="HSt-EU-GvY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eM9-V4-urQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6012" y="955"/>
         </scene>
         <!--Add Player-->
         <scene sceneID="NAW-Fn-8YF">
@@ -793,6 +923,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Lx-C4-WmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3297" y="-564"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="idx-DC-e3p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d8R-gd-eZ8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zDx-nx-nXJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gpp-ud-8pc" kind="relationship" relationship="rootViewController" id="A3W-pY-LsH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmq-rN-Pog" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5190" y="143"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZtD-rF-gGV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ozI-eE-6A4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="08x-52-CY2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JAc-Ot-S0C" kind="relationship" relationship="rootViewController" id="GA5-KW-p2v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="60H-tF-Rgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5190" y="955"/>
         </scene>
     </scenes>
     <resources>

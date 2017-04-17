@@ -42,15 +42,26 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
+    /** 
+     On 'Start' press, try to create a rivalry and return to home if success
+     */
     @IBAction func startRivalryDidPress(_ sender: Any) {
-        createRivalry()
-        dismiss(animated: true, completion: nil)
+        if createRivalry(){
+            // TODO go to 
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController")
+            self.present(vc, animated: true, completion: nil)
+        }
+        else {
+            print("Error creating rivalry")
+        }
     }
     
     /**
      Create a rivalry given current users in list (plus current user) and string as board game name
      */
-    func createRivalry(){
+    func createRivalry() -> Bool{
+        // TODO Notify user if validation is not right
+        var success = false
         if gameNameText.text != "" && players.count > 1 {
             let currentUserId = FIRAuth.auth()?.currentUser?.uid
             
@@ -60,15 +71,18 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
             }
             
             if createNewRivlary(creatorId: currentUserId!, gameName: gameNameText.text!, players: playerIds) {
-                print("Yay")
+                success = true
             }
             else {
                 print("Failed to submit")
+                success = false
             }
             
             // TODO init game history and comments field, etc
             
         }
+        return success
+        
     }
     
     
