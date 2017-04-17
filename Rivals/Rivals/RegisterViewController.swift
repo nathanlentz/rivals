@@ -26,6 +26,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
         profileImageView.isUserInteractionEnabled = true
+        profileImageView.layer.cornerRadius = 50
+        profileImageView.layer.masksToBounds = true
+        
         
     }
 
@@ -41,16 +44,47 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func chooseProfileImageDidPress(_ sender: Any) {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action: UIAlertAction) in
+            
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action: UIAlertAction) in
+            
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+        self.present(actionSheet, animated: true, completion: nil)
+
+        
+    }
+    
     /**
      Functions
      */
-    
     
     // Handle tap on profile pic
     func handleSelectProfileImageView() {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
+        // TODO: Implement taking a selfie to add a profile pic
+        // need to create a different picker and set source to camera then do thte same thing as image picker controller
+        // also need to add a new key to info.plist
+        // Implement action sheet https://www.youtube.com/watch?v=4CbcMZOSmEk
+        //picker.sourceType = UIImagePickerControllerSourceType.camera
         present(picker, animated: true, completion: nil)
         
     }
