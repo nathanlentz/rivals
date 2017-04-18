@@ -10,6 +10,7 @@ import UIKit
 
 class Rivalry: NSObject {
     
+    var creatorId: String?
     var title: String?
     var players: [String : Any]?
     var dateCreated: String?

@@ -18,12 +18,37 @@ class RivalriesInProgressTableViewController: UITableViewController {
 
         self.navigationItem.title = "Rivalries In Progress"
         
-        self.rivalries = getInProgressRivalries(userId: (FIRAuth.auth()?.currentUser?.uid)!)
+        tableView.register(RivalryTableViewCell.self, forCellReuseIdentifier: "rivalryViewCell")
+        
+        getRivalriesInProgress()
     }
     
     
     @IBAction func doneButtonDidPress(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func getRivalriesInProgress() {
+        ref.child("rivalries").observe(.childAdded, with: { (snapshot) in
+            // Add users into array and use that to populate rows
+            if let dict = snapshot.value as? [String: AnyObject] {
+                let rivalry = Rivalry()
+                rivalry.title = dict["game_name"] as? String
+                rivalry.inProgress = dict["in_progress"] as? Bool
+                rivalry.creatorId = dict["creator_id"] as? String
+                rivalry.dateCreated = dict["creation_date"] as? String
+                rivalry.rivalryKey = dict["rivalry_key"] as? String
+                
+                if FIRAuth.auth()?.currentUser?.uid == rivalry.creatorId && rivalry.inProgress == true{
+                    self.rivalries.append(rivalry)
+                }
+                
+                DispatchQueue.main.async(execute: {
+                    self.tableView.reloadData()
+                })
+            }
+            
+        }, withCancel: nil)
     }
     
     
@@ -42,12 +67,20 @@ class RivalriesInProgressTableViewController: UITableViewController {
         
         let rivalry = rivalries[indexPath.row]
         cell.gameTitleLabel.text = rivalry.title!
-        cell.dateLabel.text = rivalry.dateCreated!
-        for player in rivalry.players! {
-            print(player.value)
-        }
+        cell.dateLabel.text = "Rivalry Created: " + rivalry.dateCreated!
+        
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "rivalryDetailSegue", sender: rivalries[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let segueVC = segue.destination as! EditRivalryViewController
+        segueVC.rivalry = sender as! Rivalry
+        
     }
     
     

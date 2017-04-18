@@ -69,8 +69,9 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
             for player in players {
                 playerIds.append(player.uid!)
             }
+            let timestamp = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
             
-            if createNewRivlary(creatorId: currentUserId!, gameName: gameNameText.text!, players: playerIds) {
+            if createNewRivlary(creatorId: currentUserId!, gameName: gameNameText.text!, players: playerIds, creationDate: timestamp) {
                 success = true
             }
             else {

@@ -77,13 +77,13 @@ func getAllRivalries() -> Array<Rivalry> {
 /**
  Attepts to POST a new rivalry to firebase
  */
-func createNewRivlary(creatorId: String, gameName: String, players: [String]) -> Bool {
+func createNewRivlary(creatorId: String, gameName: String, players: [String], creationDate: String) -> Bool {
     var success = true
     let key = ref.child("rivalries").childByAutoId().key
 
 
     // TODO: Add init for historical data
-    let rivalryInfo: [String : Any] = ["rivalry_key": key, "creator_id": creatorId, "game_name": gameName, "players": players, "In Progress": true]
+    let rivalryInfo: [String : Any] = ["rivalry_key": key, "creator_id": creatorId, "game_name": gameName, "players": players, "in_progress": true, "creation_date": creationDate, "games_played": 0]
     
     ref.updateChildValues(["profiles/\(creatorId)/rivalries_in_progress/\(key)": rivalryInfo, "rivalries/\(key)": rivalryInfo], withCompletionBlock: { (error) in
         print(error)
@@ -120,7 +120,9 @@ func getInProgressRivalries(userId: String) -> Array<Rivalry> {
                 rivalry.title = dict["game_name"] as? String
                 rivalry.rivalryKey = dict["rivalry_key"] as? String
                 rivalry.players = dict["players"] as? [String : Any]
-                rivalry.inProgress = dict["In Progress"] as? Bool
+                rivalry.inProgress = dict["in_progress"] as? Bool
+                rivalry.dateCreated = dict["creation_date"] as? String
+                rivalry.gamesPlayed = dict["games_played"] as? Int
                 rivalries.append(rivalry)
             }
         }
