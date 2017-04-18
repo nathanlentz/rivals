@@ -43,10 +43,12 @@ class HomeViewController: UIViewController {
                 
                 if let dict = snapshot.value as? [String: AnyObject]{
                     self.navigationItem.title = dict["name"] as? String
-                    var tmpNum = dict["wins"] as! Int?
-                    self.winsLabel.text! = String(tmpNum!)
-                    tmpNum = dict["losses"] as! Int?
-                    self.lossesLabel.text! = String(tmpNum!)
+                    self.currentUser.name = dict["name"] as? String
+                    self.currentUser.email = dict["email"] as? String
+                    self.currentUser.wins = dict["wins"] as? Int
+                    self.currentUser.losses = dict["losses"] as? Int
+                    self.winsLabel.text = String(self.currentUser.wins!)
+                    self.lossesLabel.text = String(self.currentUser.losses!)
                     
                 }
             }, withCancel: nil)
@@ -64,8 +66,9 @@ class HomeViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+    func updateHomeView(){
+//        self.winsLabel.text = String(self.currentUser.wins!)
+//        self.lossesLabel.text = String(self.currentUser.losses!)
     }
  
 

@@ -24,8 +24,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         ref = FIRDatabase.database().reference()
         
-        profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
-        profileImageView.isUserInteractionEnabled = true
+        //profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        //profileImageView.isUserInteractionEnabled = true
         profileImageView.layer.cornerRadius = 50
         profileImageView.layer.masksToBounds = true
         

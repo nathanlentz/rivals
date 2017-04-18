@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class RivalriesInProgressTableViewController: UITableViewController {
 
+    var rivalries = [Rivalry]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "Rivalries In Progress"
+        
+        self.rivalries = getInProgressRivalries(userId: (FIRAuth.auth()?.currentUser?.uid)!)
     }
     
     
@@ -22,18 +27,33 @@ class RivalriesInProgressTableViewController: UITableViewController {
     }
     
     
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return rivalries.count
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "rivalryCell") as! RivalryTableViewCell
+        
+        let rivalry = rivalries[indexPath.row]
+        cell.gameTitleLabel.text = rivalry.title!
+        cell.dateLabel.text = rivalry.dateCreated!
+        for player in rivalry.players! {
+            print(player.value)
+        }
+        
+        return cell
+    }
+    
+    
+    
+    
+    
 
 
 }

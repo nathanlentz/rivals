@@ -10,4 +10,12 @@ import UIKit
 
 class Rivalry: NSObject {
     
+    var title: String?
+    var players: [String : Any]?
+    var dateCreated: String?
+    var gamesPlayed: Int?
+    var winners: [String : Any]?
+    var rivalryKey: String?
+    var inProgress: Bool?
+    
 }

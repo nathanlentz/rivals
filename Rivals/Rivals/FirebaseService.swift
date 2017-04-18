@@ -5,11 +5,12 @@
 //  Created by Nate Lentz on 4/16/17.
 //  Copyright © 2017 ntnl.design. All rights reserved.
 //
-//  This service should be used to pull all "Firebase" usage out of the view controllers
+//  This service should be used to pull all Firebase usage out of the view controllers
 //
 
 import Foundation
 import Firebase
+
 
 var ref = FIRDatabase.database().reference()
 
@@ -18,6 +19,22 @@ func createUserInDatabase(uid: String, userInfo: [String : Any]) {
     
     ref.child("profiles").child(uid).setValue(userInfo)
     
+}
+
+
+/**
+ Follows the user that belongs to some uid
+ */
+func followUser(userToFollowUid: String) -> Bool {
+    return false
+}
+
+
+/**
+ Unfollows the user that belongs to some uid
+ */
+func unfollowUser(userToUnfollowUid: String) -> Bool {
+    return false
 }
 
 
@@ -63,12 +80,12 @@ func getAllRivalries() -> Array<Rivalry> {
 func createNewRivlary(creatorId: String, gameName: String, players: [String]) -> Bool {
     var success = true
     let key = ref.child("rivalries").childByAutoId().key
-    
-    
+
+
     // TODO: Add init for historical data
     let rivalryInfo: [String : Any] = ["rivalry_key": key, "creator_id": creatorId, "game_name": gameName, "players": players, "In Progress": true]
     
-    ref.updateChildValues(["profiles/\(creatorId)/rivalries_in_progress": rivalryInfo, "rivalries/\(key)": rivalryInfo], withCompletionBlock: { (error) in
+    ref.updateChildValues(["profiles/\(creatorId)/rivalries_in_progress/\(key)": rivalryInfo, "rivalries/\(key)": rivalryInfo], withCompletionBlock: { (error) in
         print(error)
         success = false
     })
@@ -93,8 +110,22 @@ func getRivalry(userId: String) -> Array<Rivalry> {
  Attepts to GET all in progress rivalries from firebase given a uid
  */
 func getInProgressRivalries(userId: String) -> Array<Rivalry> {
-    let rivalries = [Rivalry]()
+    var rivalries = [Rivalry]()
+    let uid = FIRAuth.auth()?.currentUser?.uid
     
+    ref.child("rivalries").observe(.childAdded, with: { (snapshot) in
+        if let dict = snapshot.value as? [String : Any] {
+            if dict["creator_id"] as? String == uid {
+                let rivalry = Rivalry()
+                rivalry.title = dict["game_name"] as? String
+                rivalry.rivalryKey = dict["rivalry_key"] as? String
+                rivalry.players = dict["players"] as? [String : Any]
+                rivalry.inProgress = dict["In Progress"] as? Bool
+                rivalries.append(rivalry)
+            }
+        }
+    })
+
     // TODO: getAllRivalries()
     // Filter all rivalries that are "In Progress" by a user
     
@@ -120,6 +151,7 @@ func getFinishedRivalries(userId: String) -> Array<Rivalry> {
 func updateRivalry(rivalryId: String, rivalryStatus: Bool, winnerIds: [String]) {
     
 }
+
 
 
 

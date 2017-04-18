@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -239,12 +241,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJx-Ax-FzN">
-                                <rect key="frame" x="0.0" y="114" width="375" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqf-n2-Bwx">
                                 <rect key="frame" x="16" y="151" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -301,6 +297,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJx-Ax-FzN">
+                                <rect key="frame" x="0.0" y="114" width="375" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -519,24 +521,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J19-RL-Fyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4048.8000000000002" y="142.57871064467767"/>
+            <point key="canvasLocation" x="4122" y="143"/>
         </scene>
         <!--Rivalries In Progress Table View Controller-->
         <scene sceneID="5ZB-R3-HWi">
             <objects>
                 <tableViewController storyboardIdentifier="inProgressRivalriesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gpp-ud-8pc" customClass="RivalriesInProgressTableViewController" customModule="Rivals" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yz0-J4-vYX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yz0-J4-vYX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bEB-OV-1Cg">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="rivalryCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="rivalryCell" rowHeight="69" id="bEB-OV-1Cg" customClass="RivalryTableViewCell" customModule="Rivals" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEB-OV-1Cg" id="4Me-SP-kFi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5c-4y-yHk">
+                                            <rect key="frame" x="15" y="0.0" width="83" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Losses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKs-nd-GgX">
+                                            <rect key="frame" x="80" y="21" width="54" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="54" id="2jp-Em-9xA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WZ-qI-T5s">
+                                            <rect key="frame" x="15" y="39" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tco-8b-aes">
+                                            <rect key="frame" x="325" y="0.0" width="36" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-Z2-bBk">
+                                            <rect key="frame" x="15" y="21" width="32" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="j5c-4y-yHk" firstAttribute="leading" secondItem="4Me-SP-kFi" secondAttribute="leading" constant="15" id="4HW-j0-fJf"/>
+                                        <constraint firstItem="Tco-8b-aes" firstAttribute="leading" secondItem="j5c-4y-yHk" secondAttribute="trailing" constant="227" id="6ub-ti-VW9"/>
+                                        <constraint firstItem="kKs-nd-GgX" firstAttribute="baseline" secondItem="vKm-Z2-bBk" secondAttribute="firstBaseline" id="HNb-3V-5vS"/>
+                                        <constraint firstItem="kKs-nd-GgX" firstAttribute="top" secondItem="j5c-4y-yHk" secondAttribute="bottom" id="MqB-y8-Uiw"/>
+                                        <constraint firstItem="j5c-4y-yHk" firstAttribute="top" secondItem="4Me-SP-kFi" secondAttribute="top" id="ZK8-e2-7tl"/>
+                                        <constraint firstItem="kKs-nd-GgX" firstAttribute="leading" secondItem="4Me-SP-kFi" secondAttribute="leading" constant="80" id="Zjm-Lj-7DP"/>
+                                        <constraint firstItem="kKs-nd-GgX" firstAttribute="leading" secondItem="vKm-Z2-bBk" secondAttribute="trailing" constant="33" id="oyX-Fk-2bG"/>
+                                        <constraint firstItem="Tco-8b-aes" firstAttribute="baseline" secondItem="j5c-4y-yHk" secondAttribute="baseline" id="q8I-Yl-aqk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="Tco-8b-aes" id="Yor-T1-frh"/>
+                                    <outlet property="gameTitleLabel" destination="j5c-4y-yHk" id="nlQ-7p-GDK"/>
+                                    <outlet property="lossesLabel" destination="kKs-nd-GgX" id="cG2-EZ-JDq"/>
+                                    <outlet property="playersLabel" destination="7WZ-qI-T5s" id="ORd-Zd-eG9"/>
+                                    <outlet property="winsLabel" destination="vKm-Z2-bBk" id="93K-Wa-NkJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -554,7 +609,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkX-LK-7LF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6012" y="143"/>
+            <point key="canvasLocation" x="6012" y="142.57871064467767"/>
         </scene>
         <!--Rivalries Completed Table View Controller-->
         <scene sceneID="c5D-KH-BP9">
@@ -647,7 +702,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwh-Zm-Vyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZQp-7y-8Re" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4050" y="-564"/>
+            <point key="canvasLocation" x="3281" y="-564"/>
         </scene>
         <!--Profile-->
         <scene sceneID="q0O-08-Jq5">
@@ -850,7 +905,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ms-YW-sUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736.8" y="-563.56821589205401"/>
+            <point key="canvasLocation" x="1737" y="-1227"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XsS-k6-nPI">
@@ -922,7 +977,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Lx-C4-WmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3297" y="-564"/>
+            <point key="canvasLocation" x="2510" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="idx-DC-e3p">
