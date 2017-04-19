@@ -519,7 +519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J19-RL-Fyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4122" y="143"/>
+            <point key="canvasLocation" x="4199" y="143"/>
         </scene>
         <!--Rivalries In Progress Table View Controller-->
         <scene sceneID="5ZB-R3-HWi">
@@ -617,18 +617,142 @@
                                     <action selector="completeRivalryDidPress:" destination="7Mw-88-5uW" eventType="touchUpInside" id="cab-43-TPD"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="fiH-BN-Tt6">
+                                <rect key="frame" x="0.0" y="94" width="375" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kX-UC-hzk">
+                                        <rect key="frame" x="0.0" y="27.5" width="180.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Losses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zf-cc-LXw">
+                                        <rect key="frame" x="194.5" y="27.5" width="180.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="DFs-Km-2mf"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="center" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6vj-ga-pMY">
+                                <rect key="frame" x="0.0" y="182" width="375" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#Wins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isJ-8L-uSO">
+                                        <rect key="frame" x="0.0" y="45" width="187.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#Losses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWh-ze-Gx6">
+                                        <rect key="frame" x="187.5" y="45" width="187.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fA-R5-kki">
+                                <rect key="frame" x="62.5" y="300" width="250" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="New Game Results">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="T52-kC-PtH" kind="presentation" id="7JG-d2-fuc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6vj-ga-pMY" secondAttribute="bottom" constant="375" id="54D-zZ-54z"/>
+                            <constraint firstItem="6vj-ga-pMY" firstAttribute="top" secondItem="fiH-BN-Tt6" secondAttribute="bottom" constant="8" id="BBh-cJ-W9i"/>
+                            <constraint firstItem="6vj-ga-pMY" firstAttribute="trailing" secondItem="fiH-BN-Tt6" secondAttribute="trailing" id="CPi-4j-O8S"/>
+                            <constraint firstItem="fiH-BN-Tt6" firstAttribute="leading" secondItem="F8n-tm-8Z7" secondAttribute="leading" id="Fxv-Rx-lUI"/>
+                            <constraint firstItem="1fA-R5-kki" firstAttribute="centerX" secondItem="F8n-tm-8Z7" secondAttribute="centerX" id="Lgi-Le-RjM"/>
+                            <constraint firstItem="6vj-ga-pMY" firstAttribute="leading" secondItem="fiH-BN-Tt6" secondAttribute="leading" id="XYf-9X-PbZ"/>
                             <constraint firstItem="M2h-x8-SE1" firstAttribute="top" secondItem="fLS-fF-DbG" secondAttribute="bottom" constant="16" id="YzA-pc-3WS"/>
+                            <constraint firstItem="1fA-R5-kki" firstAttribute="top" secondItem="6vj-ga-pMY" secondAttribute="bottom" constant="8" symbolic="YES" id="cQ9-3X-rqx"/>
+                            <constraint firstAttribute="bottom" secondItem="fiH-BN-Tt6" secondAttribute="bottom" constant="493" id="eIY-fJ-bP2"/>
+                            <constraint firstAttribute="trailing" secondItem="fiH-BN-Tt6" secondAttribute="trailing" id="ggS-a5-F4u"/>
+                            <constraint firstItem="1fA-R5-kki" firstAttribute="width" secondItem="F8n-tm-8Z7" secondAttribute="width" multiplier="2:3" id="nDo-fO-tWB"/>
                             <constraint firstItem="fLS-fF-DbG" firstAttribute="centerX" secondItem="F8n-tm-8Z7" secondAttribute="centerX" id="qiH-IG-COu"/>
+                            <constraint firstItem="1fA-R5-kki" firstAttribute="centerX" secondItem="F8n-tm-8Z7" secondAttribute="centerX" id="yBo-rN-Hcj"/>
                             <constraint firstItem="fLS-fF-DbG" firstAttribute="width" secondItem="F8n-tm-8Z7" secondAttribute="width" multiplier="2:3" id="ydg-Mc-cdX"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvj-gm-PPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6830" y="143"/>
+            <point key="canvasLocation" x="6829.6000000000004" y="142.57871064467767"/>
+        </scene>
+        <!--Add Game To Rivalry View Controller-->
+        <scene sceneID="hbx-5M-WcF">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="T52-kC-PtH" customClass="AddGameToRivalryViewController" customModule="Rivals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b5p-WD-BYL"/>
+                        <viewControllerLayoutGuide type="bottom" id="ekD-6b-3Yq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EQQ-HL-SCE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A72-wn-0Zs">
+                                <rect key="frame" x="16" y="338" width="343" height="349"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q5-o0-8Wj">
+                                        <rect key="frame" x="0.0" y="279" width="343" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PCX-A2-JRe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addGameDidPress:" destination="T52-kC-PtH" eventType="touchUpInside" id="e9i-rO-sdB"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-oO-raX">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="216"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Iur-oO-raX" secondAttribute="trailing" id="5PF-jq-DEO"/>
+                                    <constraint firstItem="5Q5-o0-8Wj" firstAttribute="leading" secondItem="A72-wn-0Zs" secondAttribute="leading" id="6F6-FB-9GJ"/>
+                                    <constraint firstItem="Iur-oO-raX" firstAttribute="leading" secondItem="A72-wn-0Zs" secondAttribute="leading" id="CMs-NW-CSm"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Q5-o0-8Wj" secondAttribute="bottom" constant="20" id="aE7-ne-Ncg"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Q5-o0-8Wj" secondAttribute="trailing" id="agq-32-Yr8"/>
+                                    <constraint firstItem="Iur-oO-raX" firstAttribute="top" secondItem="A72-wn-0Zs" secondAttribute="top" id="eHR-Fe-q45"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.29468107876712329" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A72-wn-0Zs" firstAttribute="top" secondItem="b5p-WD-BYL" secondAttribute="bottom" constant="318" id="7En-uM-WF0"/>
+                            <constraint firstItem="ekD-6b-3Yq" firstAttribute="top" secondItem="A72-wn-0Zs" secondAttribute="bottom" constant="-20" id="Nmy-av-MrU"/>
+                            <constraint firstItem="A72-wn-0Zs" firstAttribute="trailing" secondItem="EQQ-HL-SCE" secondAttribute="trailingMargin" id="gnp-gp-49q"/>
+                            <constraint firstItem="A72-wn-0Zs" firstAttribute="leading" secondItem="EQQ-HL-SCE" secondAttribute="leadingMargin" id="n9P-fg-AOi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="Iur-oO-raX" id="fvX-NV-TeM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tLX-Lz-m00" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7605.6000000000004" y="142.57871064467767"/>
         </scene>
         <!--Rivalries Completed Table View Controller-->
         <scene sceneID="c5D-KH-BP9">
@@ -734,6 +858,15 @@
                     <view key="view" contentMode="scaleToFill" id="8bZ-ym-7aF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBx-nv-LlM">
+                                <rect key="frame" x="166" y="227" width="20" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="ouI-Ks-8bC">

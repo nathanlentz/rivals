@@ -54,6 +54,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action: UIAlertAction) in
             
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            self.present(imagePicker, animated: true, completion: nil)
             
         }))
         

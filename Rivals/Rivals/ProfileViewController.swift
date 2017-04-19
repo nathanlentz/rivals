@@ -13,6 +13,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var btnMenuButton: UIBarButtonItem!
     
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,7 @@ class ProfileViewController: UIViewController {
         btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
     }
 
+    
 
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

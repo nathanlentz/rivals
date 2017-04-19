@@ -80,7 +80,10 @@ class RivalriesInProgressTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let segueVC = segue.destination as! EditRivalryViewController
         segueVC.rivalry = sender as! Rivalry
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
     }
     
     

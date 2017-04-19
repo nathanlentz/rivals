@@ -135,6 +135,11 @@ func getInProgressRivalries(userId: String) -> Array<Rivalry> {
     
 }
 
+func completeRivalry(rivalryId: String) {
+    ref.child("rivalries").child(rivalryId).child("in_progress").setValue(false)
+    
+}
+
 /**
  Attepts to GET all finished rivalries from firebase given a uid
  */
@@ -153,6 +158,11 @@ func getFinishedRivalries(userId: String) -> Array<Rivalry> {
 func updateRivalry(rivalryId: String, rivalryStatus: Bool, winnerIds: [String]) {
     
 }
+
+
+
+
+
 
 
 

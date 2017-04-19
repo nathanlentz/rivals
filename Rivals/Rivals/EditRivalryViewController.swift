@@ -11,6 +11,7 @@ import UIKit
 class EditRivalryViewController: UIViewController {
 
     var rivalry = Rivalry()
+    var newGameResult: String = ""
     
     
     
@@ -22,7 +23,15 @@ class EditRivalryViewController: UIViewController {
 
     
     @IBAction func completeRivalryDidPress(_ sender: Any) {
+        completeRivalry(rivalryId: self.rivalry.rivalryKey!)
         navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+extension EditRivalryViewController : AddGameDelegate {
+    func gameAdded(result: String){
+        self.newGameResult = result
     }
 
 }
