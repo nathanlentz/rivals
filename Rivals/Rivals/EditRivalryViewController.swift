@@ -96,7 +96,6 @@ class EditRivalryViewController: UIViewController, AddGameDelegate, UITableViewD
     
         self.present(alertController, animated: true, completion: nil)
         
-        // TODO, add URL TO LAUNCH SETTINGS APP
     }
     
     func getWinsAndLosses() {

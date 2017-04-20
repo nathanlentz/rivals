@@ -12,6 +12,8 @@ import Firebase
 class RivalriesInProgressTableViewController: UITableViewController {
 
     var rivalries = [Rivalry]()
+    var rivalriesCreatedByOthers = [Rivalry]()
+    var sectionHeaders = ["Created By Me", "Created By Others"]
     
     override func viewWillAppear(_ animated: Bool) {
         ref.child("rivalries").observe(.childChanged, with: { (snapshot) in
@@ -61,6 +63,7 @@ class RivalriesInProgressTableViewController: UITableViewController {
         ref.child("rivalries").observe(.childAdded, with: { (snapshot) in
             // Add users into array and use that to populate rows
             if let dict = snapshot.value as? [String: AnyObject] {
+                let uid = FIRAuth.auth()?.currentUser?.uid
                 let rivalry = Rivalry()
                 rivalry.title = dict["game_name"] as? String
                 rivalry.inProgress = dict["in_progress"] as? Bool
@@ -69,8 +72,13 @@ class RivalriesInProgressTableViewController: UITableViewController {
                 rivalry.rivalryKey = dict["rivalry_key"] as? String
                 rivalry.players = dict["players"] as? [String]
                 
-                if FIRAuth.auth()?.currentUser?.uid == rivalry.creatorId && rivalry.inProgress == true{
+                if uid == rivalry.creatorId && rivalry.inProgress == true{
                     self.rivalries.append(rivalry)
+                }
+                
+                // If you are included in players but are not the creator id, append rivalry to rivalriesNotCreatedByMe
+                if uid != rivalry.creatorId && rivalry.players!.contains(uid!) {
+                    self.rivalriesCreatedByOthers.append(rivalry)
                 }
                 
                 DispatchQueue.main.async(execute: {
@@ -83,37 +91,71 @@ class RivalriesInProgressTableViewController: UITableViewController {
     
     
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.sectionHeaders[section]
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.sectionHeaders.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rivalries.count
+        if section == 0 {
+            return self.rivalries.count
+        }
+        else {
+            return self.rivalriesCreatedByOthers.count
+        }
     }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rivalryCell") as! RivalryTableViewCell
         
-        let rivalry = rivalries[indexPath.row]
-        cell.gameTitleLabel.text = rivalry.title!
-        cell.dateLabel.text = "Rivalry Created: " + rivalry.dateCreated!
-        
-        for i in 0...rivalry.players!.count - 1 {
-            ref.child("profiles").child(rivalry.players![i]).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let dict = snapshot.value as? [String : Any] {
-                    if !cell.playersLabel.text!.contains(dict["name"] as! String) {
-                        cell.playersLabel.text! += "  \(dict["name"] as! String)  "
+        if indexPath.section == 0 {
+            let rivalry = rivalries[indexPath.row]
+            cell.gameTitleLabel.text = rivalry.title!
+            cell.dateLabel.text = "Rivalry Created: " + rivalry.dateCreated!
+            
+            for i in 0...rivalry.players!.count - 1 {
+                ref.child("profiles").child(rivalry.players![i]).observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let dict = snapshot.value as? [String : Any] {
+                        if !cell.playersLabel.text!.contains(dict["name"] as! String) {
+                            cell.playersLabel.text! += "  \(dict["name"] as! String)  "
+                        }
                     }
-                }
-            })
+                })
+            }
+        }
+        // Second section -
+        else {
+            let rivalry = rivalriesCreatedByOthers[indexPath.row]
+            cell.gameTitleLabel.text = rivalry.title!
+            cell.dateLabel.text = "Rivalry Created: " + rivalry.dateCreated!
+            
+            for i in 0...rivalry.players!.count - 1 {
+                ref.child("profiles").child(rivalry.players![i]).observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let dict = snapshot.value as? [String : Any] {
+                        if !cell.playersLabel.text!.contains(dict["name"] as! String) {
+                            cell.playersLabel.text! += "  \(dict["name"] as! String)  "
+                        }
+                    }
+                })
+            }
         }
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "rivalryDetailSegue", sender: rivalries[indexPath.row])
+        if indexPath.section == 0 {
+            performSegue(withIdentifier: "rivalryDetailSegue", sender: rivalries[indexPath.row])
+        }
+        
+        else {
+            performSegue(withIdentifier: "rivalryDetailSegue", sender: rivalriesCreatedByOthers[indexPath.row])
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
