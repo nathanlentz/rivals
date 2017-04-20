@@ -853,18 +853,75 @@
         <scene sceneID="c5D-KH-BP9">
             <objects>
                 <tableViewController storyboardIdentifier="completedRivalriesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JAc-Ot-S0C" customClass="RivalriesCompletedTableViewController" customModule="Rivals" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fCc-ug-q10">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="fCc-ug-q10">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bMk-c6-pIl">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="rivalryCompCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="rivalryCompCell" rowHeight="69" id="bMk-c6-pIl" customClass="RivalryCompletedTableViewCell" customModule="Rivals" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bMk-c6-pIl" id="YlZ-tD-bPT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I5T-bz-E1s">
+                                            <rect key="frame" x="20" y="5" width="83" height="58.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Game Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RG-ce-0hX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiL-Pu-5dm">
+                                                    <rect key="frame" x="0.0" y="25.5" width="83" height="13.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Players: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qM4-uW-ccz">
+                                                    <rect key="frame" x="0.0" y="44" width="83" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="aHg-bO-uss">
+                                            <rect key="frame" x="225" y="13" width="139" height="42.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyX-V0-0Xi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="53.5" height="42.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Losses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aS-4e-lVs">
+                                                    <rect key="frame" x="85.5" y="0.0" width="53.5" height="42.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="aHg-bO-uss" secondAttribute="bottom" constant="5" id="2Qn-Ty-LQQ"/>
+                                        <constraint firstItem="I5T-bz-E1s" firstAttribute="top" secondItem="YlZ-tD-bPT" secondAttribute="top" constant="5" id="BV9-EN-lgr"/>
+                                        <constraint firstItem="aHg-bO-uss" firstAttribute="top" secondItem="YlZ-tD-bPT" secondAttribute="topMargin" constant="5" id="GPK-kQ-DPj"/>
+                                        <constraint firstAttribute="bottom" secondItem="I5T-bz-E1s" secondAttribute="bottom" constant="5" id="s8A-qh-qFc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="aHg-bO-uss" secondAttribute="trailing" constant="3" id="tRK-D8-oRD"/>
+                                        <constraint firstItem="I5T-bz-E1s" firstAttribute="leading" secondItem="YlZ-tD-bPT" secondAttribute="leading" constant="20" symbolic="YES" id="xqf-dj-ZLe"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="CiL-Pu-5dm" id="n57-uL-LaE"/>
+                                    <outlet property="gameTitleLabel" destination="8RG-ce-0hX" id="Ea9-6C-QKL"/>
+                                    <outlet property="lossesLabel" destination="0aS-4e-lVs" id="RZv-nC-bqg"/>
+                                    <outlet property="playersLabel" destination="qM4-uW-ccz" id="dzQ-WV-7OO"/>
+                                    <outlet property="winsLabel" destination="PyX-V0-0Xi" id="kVU-1j-HoU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -882,7 +939,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eM9-V4-urQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6012" y="955"/>
+            <point key="canvasLocation" x="6012" y="954.87256371814101"/>
         </scene>
         <!--Add Player-->
         <scene sceneID="NAW-Fn-8YF">

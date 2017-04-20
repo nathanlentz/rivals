@@ -48,9 +48,7 @@ class RivalriesInProgressTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "Rivalries In Progress"
-        
-        tableView.register(RivalryTableViewCell.self, forCellReuseIdentifier: "rivalryViewCell")
-        
+                
         getRivalriesInProgress()
     }
     
