@@ -79,8 +79,21 @@ class EditRivalryViewController: UIViewController, AddGameDelegate, UITableViewD
         
         let alertController = UIAlertController(title: "Uh oh", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
-        alertController.addAction(UIAlertAction(title: "Settings", style: UIAlertActionStyle.default, handler: nil))
         
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+            guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                return
+            }
+            
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    print("Settings opened: \(success)")
+                })
+            }
+        }
+        
+        alertController.addAction(settingsAction)
+    
         self.present(alertController, animated: true, completion: nil)
         
         // TODO, add URL TO LAUNCH SETTINGS APP
