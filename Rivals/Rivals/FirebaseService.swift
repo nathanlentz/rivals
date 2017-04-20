@@ -119,7 +119,7 @@ func getInProgressRivalries(userId: String) -> Array<Rivalry> {
                 let rivalry = Rivalry()
                 rivalry.title = dict["game_name"] as? String
                 rivalry.rivalryKey = dict["rivalry_key"] as? String
-                rivalry.players = dict["players"] as? [String : Any]
+                rivalry.players = dict["players"] as? [String]
                 rivalry.inProgress = dict["in_progress"] as? Bool
                 rivalry.dateCreated = dict["creation_date"] as? String
                 rivalry.gamesPlayed = dict["games_played"] as? Int

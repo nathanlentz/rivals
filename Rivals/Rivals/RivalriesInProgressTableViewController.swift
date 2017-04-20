@@ -13,6 +13,37 @@ class RivalriesInProgressTableViewController: UITableViewController {
 
     var rivalries = [Rivalry]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        ref.child("rivalries").observe(.childChanged, with: { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject] {
+                let rivalry = Rivalry()
+                rivalry.title = dict["game_name"] as? String
+                rivalry.inProgress = dict["in_progress"] as? Bool
+                rivalry.creatorId = dict["creator_id"] as? String
+                rivalry.dateCreated = dict["creation_date"] as? String
+                rivalry.rivalryKey = dict["rivalry_key"] as? String
+                rivalry.players = dict["players"] as? [String]
+                
+                if rivalry.inProgress == false{
+                    var index: Int = -1
+                    for i in 0...self.rivalries.count - 1 {
+                        if rivalry.rivalryKey == self.rivalries[i].rivalryKey {
+                            index = i
+                        }
+                    }
+                    if index != -1 {
+                        self.rivalries.remove(at: index)
+                    }
+                }
+                
+                DispatchQueue.main.async(execute: {
+                    self.tableView.reloadData()
+                })
+            }
+        })
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +69,7 @@ class RivalriesInProgressTableViewController: UITableViewController {
                 rivalry.creatorId = dict["creator_id"] as? String
                 rivalry.dateCreated = dict["creation_date"] as? String
                 rivalry.rivalryKey = dict["rivalry_key"] as? String
+                rivalry.players = dict["players"] as? [String]
                 
                 if FIRAuth.auth()?.currentUser?.uid == rivalry.creatorId && rivalry.inProgress == true{
                     self.rivalries.append(rivalry)
@@ -69,6 +101,15 @@ class RivalriesInProgressTableViewController: UITableViewController {
         cell.gameTitleLabel.text = rivalry.title!
         cell.dateLabel.text = "Rivalry Created: " + rivalry.dateCreated!
         
+        for i in 0...rivalry.players!.count - 1 {
+            ref.child("profiles").child(rivalry.players![i]).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dict = snapshot.value as? [String : Any] {
+                    if !cell.playersLabel.text!.contains(dict["name"] as! String) {
+                        cell.playersLabel.text! += "  \(dict["name"] as! String)  "
+                    }
+                }
+            })
+        }
         
         return cell
     }
@@ -82,9 +123,8 @@ class RivalriesInProgressTableViewController: UITableViewController {
         segueVC.rivalry = sender as! Rivalry
     }
     
-    override func viewWillAppear(_ animated: Bool) {
 
-    }
+
     
     
     
