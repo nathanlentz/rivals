@@ -23,7 +23,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         // Drawer Menu Items
-        menuNames = ["Profile", "Home", "Search Users", "Logout"]
+        menuNames = ["Edit Profile", "Home", "Search Users", "Logout"]
         
         // TODO Get name of current user to add to porfolio
     }
@@ -45,7 +45,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell:MenuTableViewCell = tableView.cellForRow(at: indexPath) as! MenuTableViewCell
     
-        if cell.labelMenuName.text! == "Profile" {
+        if cell.labelMenuName.text! == "Edit Profile" {
             let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "profileVC") as! ProfileViewController
             let newFrontVC =  UINavigationController.init(rootViewController:vc)

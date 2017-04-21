@@ -16,6 +16,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var lossesLabel: UILabel!
     @IBOutlet weak var winsLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var gamesPlayedLabel: UILabel!
 
     // Reference for menu button
     @IBOutlet weak var btnMenuButton: UIBarButtonItem!
@@ -47,9 +50,13 @@ class HomeViewController: UIViewController {
                     self.currentUser.email = dict["email"] as? String
                     self.currentUser.wins = dict["wins"] as? Int
                     self.currentUser.losses = dict["losses"] as? Int
+                    self.currentUser.followers = dict["followers"] as? [String]
+                    self.currentUser.following = dict["following"] as? [String]
                     self.winsLabel.text = String(self.currentUser.wins!)
                     self.lossesLabel.text = String(self.currentUser.losses!)
-                    
+                    self.followersLabel.text = String(self.currentUser.followers!.count) + "Followers"
+                    self.followingLabel.text = String(self.currentUser.following!.count) + "Following"
+                    self.gamesPlayedLabel.text = String(self.currentUser.wins! + self.currentUser.losses!) + "Games Played"
                 }
             }, withCancel: nil)
         }
@@ -70,6 +77,9 @@ class HomeViewController: UIViewController {
 //        self.winsLabel.text = String(self.currentUser.wins!)
 //        self.lossesLabel.text = String(self.currentUser.losses!)
     }
+    
+    
  
 
 }
+
