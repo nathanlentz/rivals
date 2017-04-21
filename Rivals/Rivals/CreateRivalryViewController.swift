@@ -25,6 +25,9 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         
         ref = FIRDatabase.database().reference()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
     }
     
@@ -54,6 +57,10 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
         else {
             print("Error creating rivalry")
         }
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     /**

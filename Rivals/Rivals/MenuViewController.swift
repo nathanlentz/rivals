@@ -19,9 +19,15 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Array for storing menu item images
     var menuItemImage:Array = [UIImage]()
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        view.backgroundColor = RIVALS_YELLOW
+        
+        self.tableView.backgroundColor = RIVALS_YELLOW
+        
         // Drawer Menu Items
         menuNames = ["Edit Profile", "Home", "Search Users", "Logout"]
         
@@ -37,6 +43,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //cell.imgIcon.image = menuItemImage[indexPath.row]
         cell.labelMenuName.text! = menuNames[indexPath.row]
+        
         return cell
     }
     

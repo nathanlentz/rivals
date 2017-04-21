@@ -19,6 +19,7 @@ class EditRivalryViewController: UIViewController, AddGameDelegate, UITableViewD
     var currentUser = User()
     var wins = [Game]()
     var losses = [Game]()
+    var comments = [String]()
 
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var lossesLabel: UILabel!
@@ -26,7 +27,7 @@ class EditRivalryViewController: UIViewController, AddGameDelegate, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         self.currentUser.uid = FIRAuth.auth()?.currentUser?.uid
-        
+    
     }
     
     override func viewDidLoad() {
@@ -37,6 +38,8 @@ class EditRivalryViewController: UIViewController, AddGameDelegate, UITableViewD
         self.navigationItem.title = rivalry.title
         
         getWinsAndLosses()
+        getComments()
+        
     
     }
 
@@ -98,6 +101,20 @@ class EditRivalryViewController: UIViewController, AddGameDelegate, UITableViewD
         
     }
     
+    func getComments() {
+        ref.child("games").child(rivalry.rivalryKey!).observe(.childAdded, with: { (snapshot) in
+            if let dict = snapshot.value as? [String : Any] {
+                if let comment = dict["comments"] as? String {
+                    self.comments.append(comment)
+                }
+            }
+            
+            DispatchQueue.main.async(execute: {
+                self.tableView.reloadData()
+            })
+        })
+    }
+    
     func getWinsAndLosses() {
         self.currentUser.uid = FIRAuth.auth()?.currentUser?.uid
         ref.child("games").child(self.rivalry.rivalryKey!).observe(.childAdded, with: { (snapshot) in
@@ -153,13 +170,21 @@ class EditRivalryViewController: UIViewController, AddGameDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath)
-        cell.textLabel?.text = "TEST"
+    
+        if self.comments.count > 0 {
+            cell.textLabel?.text = self.comments[self.comments.count - indexPath.row - 1]
+        }
+
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Recent Comments"
     }
     
     

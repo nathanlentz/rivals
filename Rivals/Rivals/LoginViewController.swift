@@ -22,6 +22,7 @@ class LoginViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         EmailTextField.placeholder = "Email_Text".localized
         PasswordTextField.placeholder = "Password_Text".localized
         loginButton.layer.cornerRadius = 4
@@ -29,10 +30,17 @@ class LoginViewController : UIViewController {
         
         firebaseRef = FIRDatabase.database().reference()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
     }
 
 
     /* Functions */
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 
     @IBAction func loginDidPress(_ sender: UIButton) {
         if(self.EmailTextField.text == "" || self.PasswordTextField.text == ""){

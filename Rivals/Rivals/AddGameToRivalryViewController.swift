@@ -32,6 +32,9 @@ class AddGameToRivalryViewController: UIViewController, UIPickerViewDelegate, UI
         
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddGameToRivalryViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
     }
     
@@ -45,6 +48,9 @@ class AddGameToRivalryViewController: UIViewController, UIPickerViewDelegate, UI
         dismiss(animated: true, completion: nil)
     }
 
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     func addGameToRivalry(){
         let key = ref.child("games").child(self.rivalryId).childByAutoId().key
