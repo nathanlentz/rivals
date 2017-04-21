@@ -16,6 +16,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var chooseImageText: UIButton!
     
     var ref: FIRDatabaseReference!
     
@@ -30,6 +32,10 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        /* Theme */
+        view.backgroundColor = RIVALS_YELLOW
+        registerButton.backgroundColor = RIVALS_DARKGREY
+        chooseImageText.titleLabel?.textColor = RIVALS_DARKGREY
         
     }
 

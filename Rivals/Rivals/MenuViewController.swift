@@ -25,7 +25,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         view.backgroundColor = RIVALS_YELLOW
-        
         self.tableView.backgroundColor = RIVALS_YELLOW
         
         // Drawer Menu Items
@@ -43,6 +42,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //cell.imgIcon.image = menuItemImage[indexPath.row]
         cell.labelMenuName.text! = menuNames[indexPath.row]
+        
+        cell.backgroundColor = RIVALS_YELLOW
+        cell.layer.borderColor = RIVALS_DARKGREY.cgColor
         
         return cell
     }

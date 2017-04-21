@@ -27,11 +27,15 @@ class LoginViewController : UIViewController {
         PasswordTextField.placeholder = "Password_Text".localized
         loginButton.layer.cornerRadius = 4
         signUpButton.layer.cornerRadius = 4
+        loginButton.backgroundColor = RIVALS_DARKGREY
         
         firebaseRef = FIRDatabase.database().reference()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        /* Theme */
+        view.backgroundColor = RIVALS_YELLOW
         
     }
 

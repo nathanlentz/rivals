@@ -50,6 +50,9 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
             print(error.localizedDescription)
         
         }
+        
+        /* Theme Colors */
+        
     }
     
     func filterUsers(searchText: String){
