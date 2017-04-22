@@ -33,7 +33,7 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
         tableView.tableHeaderView = searchController.searchBar
         
         ref.child("profiles").queryOrdered(byChild: "name").observe(.childAdded, with: { (snapshot) in
-        
+            
             // Include code below to not include self in list
 //            if let dict = snapshot.value as? [String: AnyObject] {
 //                // Dont add user if it is current user
@@ -42,6 +42,8 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
 //                    self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
 //                }
 //            }
+            
+            
             
             self.users.append(snapshot.value as? NSDictionary)
             self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
