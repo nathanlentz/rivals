@@ -12,7 +12,7 @@ class Rivalry: NSObject {
     
     var creatorId: String?
     var title: String?
-    var players: [String : Any]?
+    var players: [String]?
     var dateCreated: String?
     var gamesPlayed: Int?
     var winners: [String : Any]?

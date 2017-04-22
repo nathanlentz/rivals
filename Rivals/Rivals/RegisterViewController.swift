@@ -16,6 +16,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var chooseImageText: UIButton!
     
     var ref: FIRDatabaseReference!
     
@@ -24,11 +26,16 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         ref = FIRDatabase.database().reference()
         
-        //profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
-        //profileImageView.isUserInteractionEnabled = true
         profileImageView.layer.cornerRadius = 50
         profileImageView.layer.masksToBounds = true
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        /* Theme */
+        view.backgroundColor = RIVALS_SECONDARY
+        registerButton.backgroundColor = RIVALS_PRIMARY
+        chooseImageText.titleLabel?.textColor = RIVALS_PRIMARY
         
     }
 
@@ -43,6 +50,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBAction func returnToLogin(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+
     
     @IBAction func chooseProfileImageDidPress(_ sender: Any) {
         
@@ -75,6 +83,10 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     /**
      Functions
      */
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     // Handle tap on profile pic
     func handleSelectProfileImageView() {

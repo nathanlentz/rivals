@@ -21,6 +21,9 @@
 		3921F7EE1EA5B9E1008CA805 /* EditRivalryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3921F7ED1EA5B9E1008CA805 /* EditRivalryViewController.swift */; };
 		3921F7F01EA5BFA4008CA805 /* AddGameToRivalryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3921F7EF1EA5BFA4008CA805 /* AddGameToRivalryViewController.swift */; };
 		395FBA4B1EA5A65100CC28F6 /* RivalryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395FBA4A1EA5A65100CC28F6 /* RivalryTableViewCell.swift */; };
+		3994F7AA1EA804EE00F3801C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994F7A91EA804EE00F3801C /* Game.swift */; };
+		3994F7AC1EA8599E00F3801C /* RivalryCompletedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994F7AB1EA8599E00F3801C /* RivalryCompletedTableViewCell.swift */; };
+		39A828071EAA2F97009C23A6 /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A828061EAA2F97009C23A6 /* theme.swift */; };
 		39FD5F5A1EA26427004102CE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F591EA26427004102CE /* ProfileViewController.swift */; };
 		39FD5F5C1EA266B5004102CE /* CreateRivalryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F5B1EA266B5004102CE /* CreateRivalryViewController.swift */; };
 		39FD5F601EA29A63004102CE /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F5F1EA29A63004102CE /* UsersTableViewController.swift */; };
@@ -68,6 +71,9 @@
 		3921F7ED1EA5B9E1008CA805 /* EditRivalryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRivalryViewController.swift; sourceTree = "<group>"; };
 		3921F7EF1EA5BFA4008CA805 /* AddGameToRivalryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGameToRivalryViewController.swift; sourceTree = "<group>"; };
 		395FBA4A1EA5A65100CC28F6 /* RivalryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RivalryTableViewCell.swift; sourceTree = "<group>"; };
+		3994F7A91EA804EE00F3801C /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		3994F7AB1EA8599E00F3801C /* RivalryCompletedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RivalryCompletedTableViewCell.swift; sourceTree = "<group>"; };
+		39A828061EAA2F97009C23A6 /* theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = theme.swift; path = ../theme.swift; sourceTree = "<group>"; };
 		39FD5F591EA26427004102CE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		39FD5F5B1EA266B5004102CE /* CreateRivalryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRivalryViewController.swift; sourceTree = "<group>"; };
 		39FD5F5F1EA29A63004102CE /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
@@ -117,8 +123,10 @@
 		330D12D51E8C32B000D1BBBC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3994F7A91EA804EE00F3801C /* Game.swift */,
 				39FD5F631EA3C814004102CE /* AddPlayerViewCell.swift */,
 				395FBA4A1EA5A65100CC28F6 /* RivalryTableViewCell.swift */,
+				3994F7AB1EA8599E00F3801C /* RivalryCompletedTableViewCell.swift */,
 				335111BF1E9E99D30021ECAF /* MenuTableViewCell.swift */,
 				334EB76A1E92D1EB007286DA /* User.swift */,
 				331BFAA71E95344D00CD7B16 /* Rivalry.swift */,
@@ -208,6 +216,7 @@
 		BD4615DE1E846F2F001F959B /* Rivals */ = {
 			isa = PBXGroup;
 			children = (
+				39A828061EAA2F97009C23A6 /* theme.swift */,
 				39FD5F6A1EA45DE2004102CE /* Helpers */,
 				330D12D61E8C32BA00D1BBBC /* Controllers */,
 				330D12D51E8C32B000D1BBBC /* Models */,
@@ -273,6 +282,7 @@
 				BD4615ED1E846F30001F959B /* Frameworks */,
 				BD4615EE1E846F30001F959B /* Resources */,
 				E10F791B7432930AE1EBE224 /* [CP] Copy Pods Resources */,
+				F67ACB26E97BF567264B129F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,6 +306,7 @@
 				TargetAttributes = {
 					BD4615DB1E846F2F001F959B = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 26UK5Z56VH;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -375,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		95865A20A771AD586CE0DBE7 /* [CP] Copy Pods Resources */ = {
@@ -420,7 +431,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F67ACB26E97BF567264B129F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RivalsUITests/Pods-RivalsUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -435,9 +461,12 @@
 				3921F7EE1EA5B9E1008CA805 /* EditRivalryViewController.swift in Sources */,
 				39FD5F681EA3F878004102CE /* FirebaseService.swift in Sources */,
 				335DEEC01E8C47D30057E46E /* RegisterViewController.swift in Sources */,
+				39A828071EAA2F97009C23A6 /* theme.swift in Sources */,
 				39FD5F601EA29A63004102CE /* UsersTableViewController.swift in Sources */,
 				39FD5F761EA5322C004102CE /* RivalriesInProgressTableViewController.swift in Sources */,
+				3994F7AA1EA804EE00F3801C /* Game.swift in Sources */,
 				39FD5F5A1EA26427004102CE /* ProfileViewController.swift in Sources */,
+				3994F7AC1EA8599E00F3801C /* RivalryCompletedTableViewCell.swift in Sources */,
 				39FD5F781EA5323A004102CE /* RivalriesCompletedTableViewController.swift in Sources */,
 				39FD5F5C1EA266B5004102CE /* CreateRivalryViewController.swift in Sources */,
 				BD4615E21E846F2F001F959B /* LoginViewController.swift in Sources */,
@@ -591,6 +620,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 26UK5Z56VH;
 				INFOPLIST_FILE = Rivals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lentzna.Rivals;
@@ -607,6 +637,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 26UK5Z56VH;
 				INFOPLIST_FILE = Rivals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lentzna.Rivals;

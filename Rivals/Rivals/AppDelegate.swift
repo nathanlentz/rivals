@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,6 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Use Firebase library to configure APIs
         FIRApp.configure()
+        
+        
+        let navAppearance = UINavigationBar.appearance()
+        navAppearance.barTintColor = RIVALS_PRIMARY
+        navAppearance.tintColor = RIVALS_SECONDARY
+        navAppearance.isTranslucent = false
+        navAppearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
         return true
     }
