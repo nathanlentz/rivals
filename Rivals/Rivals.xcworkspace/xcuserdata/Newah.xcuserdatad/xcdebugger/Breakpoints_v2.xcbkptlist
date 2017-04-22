@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rivals Today/TodayViewController.swift"
+            timestampString = "514580908.121908"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "OpenRivalsAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rivals Today/TodayViewController.swift"
+            timestampString = "514581067.629412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "7"
+            endingLineNumber = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rivals_Today.TodayViewController.__deallocating_deinit"
+                  moduleName = "Rivals Today"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Newah/Library/Mobile%20Documents/com~apple~CloudDocs/School/CIS%20357/Final%20Project/rivals/Rivals/Rivals%20Today/TodayViewController.swift"
+                  timestampString = "514581469.357398"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rivals_Today.TodayViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Rivals_Today.TodayViewController"
+                  moduleName = "Rivals Today"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Newah/Library/Mobile%20Documents/com~apple~CloudDocs/School/CIS%20357/Final%20Project/rivals/Rivals/Rivals%20Today/TodayViewController.swift"
+                  timestampString = "514581469.359075"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rivals_Today.TodayViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Rivals_Today.TodayViewController&gt;"
+                  moduleName = "Rivals Today"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Newah/Library/Mobile%20Documents/com~apple~CloudDocs/School/CIS%20357/Final%20Project/rivals/Rivals/Rivals%20Today/TodayViewController.swift"
+                  timestampString = "514581469.369731"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rivals_Today.TodayViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Rivals_Today.TodayViewController&gt;"
+                  moduleName = "Rivals Today"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Newah/Library/Mobile%20Documents/com~apple~CloudDocs/School/CIS%20357/Final%20Project/rivals/Rivals/Rivals%20Today/TodayViewController.swift"
+                  timestampString = "514581469.37468"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rivals/AppDelegate.swift"
+            timestampString = "514582997.074373"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rivals Today/TodayViewController.swift"
+            timestampString = "514585902.402021"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "OpenRivalsAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
