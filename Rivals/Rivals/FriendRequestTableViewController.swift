@@ -92,7 +92,9 @@ class FriendRequestTableViewController: UITableViewController {
             friend.friendUid = self.requests[indexPath.row].requesterUid
             friend.status = "Accepted"
             let friendData = ["friend_uid": friend.friendUid, "name": friend.name, "status": friend.status]
-            ref.child("profiles").child(self.currentUserId!).child("friends").setValue(friendData)
+            ref.child("profiles").child(self.currentUserId!).child("friends").child(friend.friendUid!).setValue(friendData)
+            
+            ref.child("profiles").child(self.currentUserId!).child("requests").child(self.requests[indexPath.row].requesterUid!).removeValue()
             
             // Update status on requester
             ref.child("profiles").child(friend.friendUid!).child("friends").child(self.currentUserId!).child("status").setValue("Accepted")

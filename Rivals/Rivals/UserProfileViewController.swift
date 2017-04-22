@@ -38,7 +38,7 @@ class UserProfileViewController: UIViewController {
         
         loadUserSettings()
         getCurrentUser()
-        getCurrentUserFriends()
+        getFriendStatus()
         
         self.winsLabel.text = String(user.wins!)
         self.lossesLabel.text = String(user.losses!)
@@ -65,7 +65,7 @@ class UserProfileViewController: UIViewController {
         
     }
     
-    func getCurrentUserFriends() {
+    func getFriendStatus() {
         ref.child("profiles").child(currentUserId!).child("friends").child(self.user.uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let friendsDict = snapshot.value as? [String : Any] {
                 let friend = Friend()
@@ -75,9 +75,11 @@ class UserProfileViewController: UIViewController {
                 if friend.friendUid == self.user.uid {
                     if friend.status == "pending" {
                         self.friendButton.setTitle("Pending", for: .normal)
+                        self.friendButton.backgroundColor = RIVALS_BLUISH
                     }
-                    else if friend.status == "friends" {
+                    else if friend.status == "Accepted" {
                         self.friendButton.setTitle("Remove Friend", for: .normal)
+                        // Turn this into a red button
                     }
                     else {
                         self.friendButton.setTitle("Add Friend", for: .normal)
