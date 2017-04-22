@@ -39,8 +39,8 @@ class HomeViewController: UIViewController {
         profileImageView.layer.masksToBounds = true
         
         /* Theme Stuff */
-        self.inProgressButton.backgroundColor = RIVALS_DARKGREY
-        self.completedButton.backgroundColor = RIVALS_DARKGREY
+        self.inProgressButton.backgroundColor = RIVALS_PRIMARY
+        self.completedButton.backgroundColor = RIVALS_PRIMARY
         
         checkIfUserIsLoggedIn()
     

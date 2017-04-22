@@ -33,9 +33,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         view.addGestureRecognizer(tap)
         
         /* Theme */
-        view.backgroundColor = RIVALS_YELLOW
-        registerButton.backgroundColor = RIVALS_DARKGREY
-        chooseImageText.titleLabel?.textColor = RIVALS_DARKGREY
+        view.backgroundColor = RIVALS_SECONDARY
+        registerButton.backgroundColor = RIVALS_PRIMARY
+        chooseImageText.titleLabel?.textColor = RIVALS_PRIMARY
         
     }
 

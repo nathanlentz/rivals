@@ -24,8 +24,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = RIVALS_YELLOW
-        self.tableView.backgroundColor = RIVALS_YELLOW
+        view.backgroundColor = RIVALS_SECONDARY
+        self.tableView.backgroundColor = RIVALS_SECONDARY
         
         // Drawer Menu Items
         menuNames = ["Edit Profile", "Home", "Search Users", "Logout"]
@@ -43,8 +43,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         //cell.imgIcon.image = menuItemImage[indexPath.row]
         cell.labelMenuName.text! = menuNames[indexPath.row]
         
-        cell.backgroundColor = RIVALS_YELLOW
-        cell.layer.borderColor = RIVALS_DARKGREY.cgColor
+        cell.backgroundColor = RIVALS_SECONDARY
+        cell.layer.borderColor = RIVALS_PRIMARY.cgColor
         
         return cell
     }

@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let navAppearance = UINavigationBar.appearance()
-        navAppearance.barTintColor = RIVALS_DARKGREY
-        navAppearance.tintColor = RIVALS_YELLOW
+        navAppearance.barTintColor = RIVALS_PRIMARY
+        navAppearance.tintColor = RIVALS_SECONDARY
         navAppearance.isTranslucent = false
         navAppearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
