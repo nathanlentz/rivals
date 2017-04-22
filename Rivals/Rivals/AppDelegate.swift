@@ -53,7 +53,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
+
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        
+//        let urlString = url.absoluteString
+//        
+//        if urlString == "rivalsntnl"
+//        {
+//            let storyboard = UIStoryboard(name:"Main", bundle:nil)
+//            let navVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! UINavigationController
+//            self.window?.rootViewController?.present(navVC, animated: true, completion: nil)
+//            
+//        }
+//        return true
+//    }
 
 }
-

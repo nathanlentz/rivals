@@ -38,6 +38,10 @@
 		39FD5F741EA52E52004102CE /* CreateRivalryResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F731EA52E52004102CE /* CreateRivalryResultsViewController.swift */; };
 		39FD5F761EA5322C004102CE /* RivalriesInProgressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F751EA5322C004102CE /* RivalriesInProgressTableViewController.swift */; };
 		39FD5F781EA5323A004102CE /* RivalriesCompletedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD5F771EA53239004102CE /* RivalriesCompletedTableViewController.swift */; };
+		A5A991B81EABD96200DF6334 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A991B71EABD96200DF6334 /* NotificationCenter.framework */; };
+		A5A991BB1EABD96200DF6334 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A991BA1EABD96200DF6334 /* TodayViewController.swift */; };
+		A5A991BE1EABD96200DF6334 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A991BC1EABD96200DF6334 /* MainInterface.storyboard */; };
+		A5A991C21EABD96200DF6334 /* Rivals Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A5A991B61EABD96200DF6334 /* Rivals Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A9B0C9DC3A9DDEF04F804915 /* Pods_Rivals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369D7CBE31B9C562301653D2 /* Pods_Rivals.framework */; };
 		BD4615E01E846F2F001F959B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4615DF1E846F2F001F959B /* AppDelegate.swift */; };
 		BD4615E21E846F2F001F959B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4615E11E846F2F001F959B /* LoginViewController.swift */; };
@@ -47,6 +51,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A5A991C01EABD96200DF6334 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD4615D41E846F2F001F959B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5A991B51EABD96200DF6334;
+			remoteInfo = "Rivals Today";
+		};
 		BD4615F11E846F30001F959B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BD4615D41E846F2F001F959B /* Project object */;
@@ -55,6 +66,20 @@
 			remoteInfo = Rivals;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A5A991C61EABD96200DF6334 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A5A991C21EABD96200DF6334 /* Rivals Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A684F76CEBB40E75688A2E0 /* Pods-RivalsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RivalsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RivalsUITests/Pods-RivalsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +119,12 @@
 		43BC8414D5D2361464597D36 /* Pods-RivalsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RivalsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RivalsUITests/Pods-RivalsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7164539D554874F76CDD051A /* Pods-Rivals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rivals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rivals/Pods-Rivals.release.xcconfig"; sourceTree = "<group>"; };
 		8694BBE497CAD366B4ED9234 /* Pods_RivalsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A58F27C71EABF84E0048E9DF /* Rivals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rivals.entitlements; sourceTree = "<group>"; };
+		A5A991B61EABD96200DF6334 /* Rivals Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Rivals Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5A991B71EABD96200DF6334 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		A5A991BA1EABD96200DF6334 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		A5A991BD1EABD96200DF6334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A5A991BF1EABD96200DF6334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4615DC1E846F2F001F959B /* Rivals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rivals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4615DF1E846F2F001F959B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD4615E11E846F2F001F959B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +138,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A5A991B31EABD96200DF6334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A991B81EABD96200DF6334 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD4615D91E846F2F001F959B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,8 +233,19 @@
 			children = (
 				369D7CBE31B9C562301653D2 /* Pods_Rivals.framework */,
 				8694BBE497CAD366B4ED9234 /* Pods_RivalsUITests.framework */,
+				A5A991B71EABD96200DF6334 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5A991B91EABD96200DF6334 /* Rivals Today */ = {
+			isa = PBXGroup;
+			children = (
+				A5A991BA1EABD96200DF6334 /* TodayViewController.swift */,
+				A5A991BC1EABD96200DF6334 /* MainInterface.storyboard */,
+				A5A991BF1EABD96200DF6334 /* Info.plist */,
+			);
+			path = "Rivals Today";
 			sourceTree = "<group>";
 		};
 		BD4615D31E846F2F001F959B = {
@@ -206,6 +256,7 @@
 				33C6A89D1E8C52B60044483F /* GoogleService-Info.plist */,
 				BD4615DE1E846F2F001F959B /* Rivals */,
 				BD4615F31E846F30001F959B /* RivalsUITests */,
+				A5A991B91EABD96200DF6334 /* Rivals Today */,
 				BD4615DD1E846F2F001F959B /* Products */,
 				C456DBE278D370AD1D00376B /* Pods */,
 				50796C20335294E74DDBE26E /* Frameworks */,
@@ -218,6 +269,7 @@
 			children = (
 				BD4615DC1E846F2F001F959B /* Rivals.app */,
 				BD4615F01E846F30001F959B /* RivalsUITests.xctest */,
+				A5A991B61EABD96200DF6334 /* Rivals Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,6 +277,7 @@
 		BD4615DE1E846F2F001F959B /* Rivals */ = {
 			isa = PBXGroup;
 			children = (
+				A58F27C71EABF84E0048E9DF /* Rivals.entitlements */,
 				39A828061EAA2F97009C23A6 /* theme.swift */,
 				39FD5F6A1EA45DE2004102CE /* Helpers */,
 				330D12D61E8C32BA00D1BBBC /* Controllers */,
@@ -262,6 +315,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A5A991B51EABD96200DF6334 /* Rivals Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5A991C51EABD96200DF6334 /* Build configuration list for PBXNativeTarget "Rivals Today" */;
+			buildPhases = (
+				A5A991B21EABD96200DF6334 /* Sources */,
+				A5A991B31EABD96200DF6334 /* Frameworks */,
+				A5A991B41EABD96200DF6334 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rivals Today";
+			productName = "Rivals Today";
+			productReference = A5A991B61EABD96200DF6334 /* Rivals Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		BD4615DB1E846F2F001F959B /* Rivals */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD4615F91E846F30001F959B /* Build configuration list for PBXNativeTarget "Rivals" */;
@@ -272,10 +342,12 @@
 				BD4615DA1E846F2F001F959B /* Resources */,
 				1B343D81C8B4AF9587BBD1D8 /* [CP] Embed Pods Frameworks */,
 				95865A20A771AD586CE0DBE7 /* [CP] Copy Pods Resources */,
+				A5A991C61EABD96200DF6334 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A5A991C11EABD96200DF6334 /* PBXTargetDependency */,
 			);
 			name = Rivals;
 			productName = Rivals;
@@ -313,11 +385,21 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = ntnl.design;
 				TargetAttributes = {
+					A5A991B51EABD96200DF6334 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 26UK5Z56VH;
+						ProvisioningStyle = Automatic;
+					};
 					BD4615DB1E846F2F001F959B = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 26UK5Z56VH;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					BD4615EF1E846F30001F959B = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -341,11 +423,20 @@
 			targets = (
 				BD4615DB1E846F2F001F959B /* Rivals */,
 				BD4615EF1E846F30001F959B /* RivalsUITests */,
+				A5A991B51EABD96200DF6334 /* Rivals Today */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A5A991B41EABD96200DF6334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A991BE1EABD96200DF6334 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD4615DA1E846F2F001F959B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,6 +552,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A5A991B21EABD96200DF6334 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A991BB1EABD96200DF6334 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD4615D81E846F2F001F959B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,6 +607,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A5A991C11EABD96200DF6334 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5A991B51EABD96200DF6334 /* Rivals Today */;
+			targetProxy = A5A991C01EABD96200DF6334 /* PBXContainerItemProxy */;
+		};
 		BD4615F21E846F30001F959B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BD4615DB1E846F2F001F959B /* Rivals */;
@@ -524,6 +628,14 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		A5A991BC1EABD96200DF6334 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5A991BD1EABD96200DF6334 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		BD4615E81E846F2F001F959B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -535,6 +647,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A5A991C31EABD96200DF6334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 26UK5Z56VH;
+				INFOPLIST_FILE = "Rivals Today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lentzna.Rivals.Rivals-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A5A991C41EABD96200DF6334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 26UK5Z56VH;
+				INFOPLIST_FILE = "Rivals Today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lentzna.Rivals.Rivals-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		BD4615F71E846F30001F959B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -630,8 +768,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBC2888DEF2A627AA4A9C123 /* Pods-Rivals.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Rivals/Rivals.entitlements;
 				DEVELOPMENT_TEAM = 26UK5Z56VH;
 				INFOPLIST_FILE = Rivals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -647,8 +787,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7164539D554874F76CDD051A /* Pods-Rivals.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Rivals/Rivals.entitlements;
 				DEVELOPMENT_TEAM = 26UK5Z56VH;
 				INFOPLIST_FILE = Rivals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -690,6 +832,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A5A991C51EABD96200DF6334 /* Build configuration list for PBXNativeTarget "Rivals Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5A991C31EABD96200DF6334 /* Debug */,
+				A5A991C41EABD96200DF6334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BD4615D71E846F2F001F959B /* Build configuration list for PBXProject "Rivals" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
