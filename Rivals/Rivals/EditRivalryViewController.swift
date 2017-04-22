@@ -24,10 +24,17 @@ class EditRivalryViewController: UIViewController, AddGameDelegate, UITableViewD
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var lossesLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var newGameButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         self.currentUser.uid = FIRAuth.auth()?.currentUser?.uid
-    
+        
+        /* Theme Stuff */
+        shareButton.backgroundColor = RIVALS_PRIMARY
+        newGameButton.backgroundColor = RIVALS_BLUISH
+        
+        
     }
     
     override func viewDidLoad() {

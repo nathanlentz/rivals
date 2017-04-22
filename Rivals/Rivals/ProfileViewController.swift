@@ -15,8 +15,11 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var user = User()
+    var imageUpdated = false
+    var profileUpdated = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,8 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         
         profileImageView.layer.cornerRadius = 50
         profileImageView.layer.masksToBounds = true
+        
+        self.errorLabel.text = ""
         
         getCurrentUserInfo()
         
@@ -41,6 +46,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             if let dict = snapshot.value as? [String : Any] {
                 self.user.name = dict["name"] as? String
                 self.user.email = dict["email"] as? String
+                self.user.uid = dict["uid"] as? String
                 self.nameTextField.text = self.user.name
                 self.emailTextField.text = self.user.email
                 if let userProfileImageUrl = dict["profileImageUrl"] as? String{
@@ -54,10 +60,74 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     /* Save Any Changes to user profile */
     @IBAction func saveButtonDidPress(_ sender: UIBarButtonItem) {
         
-        // Check if anything has changed
-        // Submit profile change request
-        // Update user info in profiles
+        if nameTextField.text != self.user.name! || emailTextField.text != self.user.email || self.imageUpdated {
+            guard nameTextField.text != "", emailTextField.text != ""
+                else { return }
+            
+            // Submit profile change request, update email/name
+            let changeRequest = FIRAuth.auth()?.currentUser?.profileChangeRequest()
+            changeRequest?.displayName = nameTextField.text
+            changeRequest?.commitChanges(completion: { (error) in
+                if error != nil {
+                    print("Failed to update name")
+                    self.errorLabel.text = "Failed to update profile"
+                    self.profileUpdated = false
+                }
+
+            })
+            FIRAuth.auth()?.currentUser?.updateEmail(emailTextField.text!, completion: { (error) in
+                if error != nil {
+                    self.errorLabel.text = "Failed to update profile"
+                    self.profileUpdated = false
+                }
+                else {
+                    // Send verification email
+                    FIRAuth.auth()?.currentUser?.sendEmailVerification(completion: nil)
+                    // Pop an alert
+                    
+                }
+            })
         
+            if self.imageUpdated {
+                // Compress image and upload new one, then set new image url
+                let imgName = NSUUID().uuidString
+                let storageRef = FIRStorage.storage().reference().child("profile_images").child(imgName)
+                if let uploadData = UIImageJPEGRepresentation(self.profileImageView.image!, 0.1) {
+                    
+                    storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                        if error != nil {
+                            print(error!)
+                            return
+                        }
+                        
+                        if let imageProfileUrl = metadata?.downloadURL()?.absoluteString {
+                            self.user.profileImageUrl = imageProfileUrl
+                            ref.child("profiles").child(self.user.uid!).child("profileImageUrl").setValue(self.user.profileImageUrl)
+                        }
+                    })
+                }
+            }
+            
+            if profileUpdated {
+                ref.child("profiles").child(self.user.uid!).child("name").setValue(self.nameTextField.text)
+                ref.child("profiles").child(self.user.uid!).child("email").setValue(self.emailTextField.text)
+                
+                // Pop alert that profile was updated
+                let alertController = UIAlertController(title: "Success!", message: "Profile Updated!", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+    
+            
+            else {
+                let alertController = UIAlertController(title: "Error", message: "Could not update profile", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+        }
     }
     
     
@@ -101,7 +171,8 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         }
         
         if let selectedImage = imageFromPicker {
-            profileImageView.image = selectedImage
+            self.profileImageView.image = selectedImage
+            self.imageUpdated = true
         }
         dismiss(animated: true, completion: nil)
         

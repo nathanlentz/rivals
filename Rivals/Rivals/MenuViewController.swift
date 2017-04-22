@@ -29,6 +29,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Drawer Menu Items
         menuNames = ["Edit Profile", "Home", "Search Users", "Logout"]
+        menuItemImage = [UIImage(named: "profile-1")!, UIImage(named: "home")!, UIImage(named: "magnify")!, UIImage(named: "logout")!]
         
         // TODO Get name of current user to add to porfolio
     }
@@ -40,7 +41,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell") as! MenuTableViewCell
         
-        //cell.imgIcon.image = menuItemImage[indexPath.row]
+        cell.imgIcon.image = menuItemImage[indexPath.row]
         cell.labelMenuName.text! = menuNames[indexPath.row]
         
         cell.backgroundColor = RIVALS_SECONDARY
@@ -48,6 +49,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let revealViewController:SWRevealViewController = self.revealViewController()

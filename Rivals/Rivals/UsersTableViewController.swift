@@ -45,6 +45,8 @@ class UsersTableViewController: UITableViewController {
                 user.wins = dict["wins"] as? Int
                 user.losses = dict["losses"] as? Int
                 user.uid = dict["uid"] as? String
+                user.profileImageUrl = dict["profileImageUrl"] as? String
+                user.friends = dict["friends"] as? [String : Any]
                 
                 if FIRAuth.auth()?.currentUser?.uid != user.uid {
                     self.users.append(user)

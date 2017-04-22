@@ -21,12 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FIRApp.configure()
         
-        
+        UIApplication.shared.statusBarStyle = .lightContent
         let navAppearance = UINavigationBar.appearance()
         navAppearance.barTintColor = RIVALS_PRIMARY
         navAppearance.tintColor = RIVALS_SECONDARY
         navAppearance.isTranslucent = false
         navAppearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        
         
         return true
     }

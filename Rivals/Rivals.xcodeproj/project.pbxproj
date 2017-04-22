@@ -21,6 +21,9 @@
 		3921F7EE1EA5B9E1008CA805 /* EditRivalryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3921F7ED1EA5B9E1008CA805 /* EditRivalryViewController.swift */; };
 		3921F7F01EA5BFA4008CA805 /* AddGameToRivalryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3921F7EF1EA5BFA4008CA805 /* AddGameToRivalryViewController.swift */; };
 		395FBA4B1EA5A65100CC28F6 /* RivalryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395FBA4A1EA5A65100CC28F6 /* RivalryTableViewCell.swift */; };
+		396CE1DD1EABD9A5000C2F8F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396CE1DC1EABD9A5000C2F8F /* Friend.swift */; };
+		396CE1E11EABE33B000C2F8F /* FriendRequestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396CE1E01EABE33B000C2F8F /* FriendRequestTableViewController.swift */; };
+		396CE1E31EABE64E000C2F8F /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396CE1E21EABE64E000C2F8F /* FriendRequest.swift */; };
 		3994F7AA1EA804EE00F3801C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994F7A91EA804EE00F3801C /* Game.swift */; };
 		3994F7AC1EA8599E00F3801C /* RivalryCompletedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994F7AB1EA8599E00F3801C /* RivalryCompletedTableViewCell.swift */; };
 		39A828071EAA2F97009C23A6 /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A828061EAA2F97009C23A6 /* theme.swift */; };
@@ -71,6 +74,9 @@
 		3921F7ED1EA5B9E1008CA805 /* EditRivalryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRivalryViewController.swift; sourceTree = "<group>"; };
 		3921F7EF1EA5BFA4008CA805 /* AddGameToRivalryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGameToRivalryViewController.swift; sourceTree = "<group>"; };
 		395FBA4A1EA5A65100CC28F6 /* RivalryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RivalryTableViewCell.swift; sourceTree = "<group>"; };
+		396CE1DC1EABD9A5000C2F8F /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		396CE1E01EABE33B000C2F8F /* FriendRequestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewController.swift; sourceTree = "<group>"; };
+		396CE1E21EABE64E000C2F8F /* FriendRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
 		3994F7A91EA804EE00F3801C /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3994F7AB1EA8599E00F3801C /* RivalryCompletedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RivalryCompletedTableViewCell.swift; sourceTree = "<group>"; };
 		39A828061EAA2F97009C23A6 /* theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = theme.swift; path = ../theme.swift; sourceTree = "<group>"; };
@@ -123,6 +129,8 @@
 		330D12D51E8C32B000D1BBBC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				396CE1E21EABE64E000C2F8F /* FriendRequest.swift */,
+				396CE1DC1EABD9A5000C2F8F /* Friend.swift */,
 				3994F7A91EA804EE00F3801C /* Game.swift */,
 				39FD5F631EA3C814004102CE /* AddPlayerViewCell.swift */,
 				395FBA4A1EA5A65100CC28F6 /* RivalryTableViewCell.swift */,
@@ -144,6 +152,7 @@
 				39FD5F591EA26427004102CE /* ProfileViewController.swift */,
 				39FD5F5F1EA29A63004102CE /* UsersTableViewController.swift */,
 				39FD5F651EA3CF13004102CE /* FindUserTableViewController.swift */,
+				396CE1E01EABE33B000C2F8F /* FriendRequestTableViewController.swift */,
 				39FD5F611EA3BADD004102CE /* UserProfileViewController.swift */,
 			);
 			name = Controllers;
@@ -460,6 +469,7 @@
 				39FD5F641EA3C814004102CE /* AddPlayerViewCell.swift in Sources */,
 				3921F7EE1EA5B9E1008CA805 /* EditRivalryViewController.swift in Sources */,
 				39FD5F681EA3F878004102CE /* FirebaseService.swift in Sources */,
+				396CE1E31EABE64E000C2F8F /* FriendRequest.swift in Sources */,
 				335DEEC01E8C47D30057E46E /* RegisterViewController.swift in Sources */,
 				39A828071EAA2F97009C23A6 /* theme.swift in Sources */,
 				39FD5F601EA29A63004102CE /* UsersTableViewController.swift in Sources */,
@@ -471,7 +481,9 @@
 				39FD5F5C1EA266B5004102CE /* CreateRivalryViewController.swift in Sources */,
 				BD4615E21E846F2F001F959B /* LoginViewController.swift in Sources */,
 				3921F7F01EA5BFA4008CA805 /* AddGameToRivalryViewController.swift in Sources */,
+				396CE1DD1EABD9A5000C2F8F /* Friend.swift in Sources */,
 				BD4615E01E846F2F001F959B /* AppDelegate.swift in Sources */,
+				396CE1E11EABE33B000C2F8F /* FriendRequestTableViewController.swift in Sources */,
 				39FD5F741EA52E52004102CE /* CreateRivalryResultsViewController.swift in Sources */,
 				39FD5F661EA3CF13004102CE /* FindUserTableViewController.swift in Sources */,
 				334EB76B1E92D1EB007286DA /* User.swift in Sources */,

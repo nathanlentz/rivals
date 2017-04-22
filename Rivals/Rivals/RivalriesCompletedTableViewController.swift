@@ -52,7 +52,6 @@ class RivalriesCompletedTableViewController: UITableViewController {
         }, withCancel: nil)
     }
     
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

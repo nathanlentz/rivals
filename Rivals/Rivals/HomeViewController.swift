@@ -59,16 +59,15 @@ class HomeViewController: UIViewController {
                     self.currentUser.email = dict["email"] as? String
                     self.currentUser.wins = dict["wins"] as? Int
                     self.currentUser.losses = dict["losses"] as? Int
-                    self.currentUser.followers = dict["followers"] as? [String]
-                    self.currentUser.following = dict["following"] as? [String]
+                    self.currentUser.friends = dict["friends"] as? [String : Any]
+                    self.currentUser.requests = dict["requests"] as? [String : Any]
                     self.winsLabel.text = String(self.currentUser.wins!)
                     self.lossesLabel.text = String(self.currentUser.losses!)
                     if let userProfileImageUrl = dict["profileImageUrl"] as? String{
                         self.profileImageView.loadImageUsingCacheWithUrlString(urlString: userProfileImageUrl)
                     }
-//                  self.followersLabel.text = String(self.currentUser.followers!.count) + "Followers"
-//                  self.followingLabel.text = String(self.currentUser.following!.count) + "Following"
-                    //self.gamesPlayedLabel.text = String(self.currentUser.wins! + self.currentUser.losses!) + "Games Played"
+
+                    self.gamesPlayedLabel.text = String(self.currentUser.wins! + self.currentUser.losses!)
                 }
             }, withCancel: nil)
         }
@@ -85,9 +84,8 @@ class HomeViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    func updateHomeView(){
-        //        self.winsLabel.text = String(self.currentUser.wins!)
-        //        self.lossesLabel.text = String(self.currentUser.losses!)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
     
  

@@ -18,7 +18,7 @@ class User: NSObject {
     var profileImageUrl: String?
     var rivalriesInProgress: [String : Any]?
     var rivalriesCompleted: [String: Any]?
-    var followers: [String]?
-    var following: [String]?
+    var friends: [String : Any]?
+    var requests: [String : Any]?
     
 }
