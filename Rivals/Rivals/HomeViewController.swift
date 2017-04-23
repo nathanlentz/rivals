@@ -20,10 +20,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var inProgressButton: UIButton!
     @IBOutlet weak var completedButton: UIButton!
     @IBOutlet weak var gamesPlayedLabel: UILabel!
-    @IBOutlet weak var followingLabel: UILabel!
-    @IBOutlet weak var followersLabel: UILabel!
-    
+    @IBOutlet weak var requestButton: UIButton!
     // Reference for menu button
+    @IBOutlet weak var friendsNumberLabel: UILabel!
     @IBOutlet weak var btnMenuButton: UIBarButtonItem!
     
     
@@ -41,6 +40,7 @@ class HomeViewController: UIViewController {
         /* Theme Stuff */
         self.inProgressButton.backgroundColor = RIVALS_PRIMARY
         self.completedButton.backgroundColor = RIVALS_PRIMARY
+        self.requestButton.backgroundColor = RIVALS_BLUISH
         
         checkIfUserIsLoggedIn()
     
@@ -65,6 +65,18 @@ class HomeViewController: UIViewController {
                     self.lossesLabel.text = String(self.currentUser.losses!)
                     if let userProfileImageUrl = dict["profileImageUrl"] as? String{
                         self.profileImageView.loadImageUsingCacheWithUrlString(urlString: userProfileImageUrl)
+                    }
+                    
+                    if self.currentUser.requests != nil {
+                        self.requestButton.setTitle("Requests (\(self.currentUser.requests?.count ?? 0))", for: .normal)
+                    }
+                    
+                    else {
+                        self.requestButton.setTitle("Requests (0)", for: .normal)
+                    }
+                    
+                    if self.currentUser.friends != nil {
+                        self.friendsNumberLabel.text = "\(self.currentUser.friends?.count ?? 0)"
                     }
 
                     self.gamesPlayedLabel.text = String(self.currentUser.wins! + self.currentUser.losses!)

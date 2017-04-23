@@ -75,14 +75,11 @@ class RivalriesCompletedTableViewController: UITableViewController {
                     if !cell.playersLabel.text!.contains(dict["name"] as! String) {
                         cell.playersLabel.text! += "  \(dict["name"] as! String)  "
                     }
-
                 }
-                
             })
         }
         
         return cell
     }
-
 
 }

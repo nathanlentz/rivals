@@ -113,8 +113,26 @@ class UserProfileViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         
-        if self.friendButton.titleLabel?.text == "Remove friend" {
+        if self.friendButton.titleLabel?.text == "Remove Friend" {
+            
             // Alert asking for confirmation
+            let alertController = UIAlertController(title: "Whoa!", message: "Too much beef between you two?", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let removeAction = UIAlertAction(title: "Remove Friend", style: .default) { (_) -> Void in
+                // Remove from current user 
+                ref.child("profiles").child(self.currentUser.uid!).child("friends").child(self.user.uid!).removeValue()
+                
+                // Remove from user
+                ref.child("profiles").child(self.user.uid!).child("friends").child(self.currentUser.uid!).removeValue()
+                
+                self.friendButton.setTitle("Add Friend", for: .normal)
+            }
+            
+            alertController.addAction(cancelAction)
+            alertController.addAction(removeAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
             // Remove if yes
         }
 

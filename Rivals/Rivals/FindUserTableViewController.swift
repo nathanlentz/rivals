@@ -32,22 +32,20 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
+        let currentUserId = FIRAuth.auth()?.currentUser?.uid
+        
         ref.child("profiles").queryOrdered(byChild: "name").observe(.childAdded, with: { (snapshot) in
-            
-            // Include code below to not include self in list
-//            if let dict = snapshot.value as? [String: AnyObject] {
-//                // Dont add user if it is current user
-//                if dict["uid"] as? String != FIRAuth.auth()?.currentUser?.uid {
-//                    self.users.append(snapshot.value as? NSDictionary)
-//                    self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
-//                }
-//            }
-            
-            
-            
-            self.users.append(snapshot.value as? NSDictionary)
-            self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
-            
+        
+            // Check if user in snapshot has current user in friends list
+            let user = snapshot.value as? NSDictionary
+            if let friends = user?["friends"] as! [String : Any]? {
+                for (key, _) in friends {
+                    if key == currentUserId {
+                        self.users.append(snapshot.value as? NSDictionary)
+                        self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
+                    }
+                }
+            }
         }) { (error) in
             print(error.localizedDescription)
         

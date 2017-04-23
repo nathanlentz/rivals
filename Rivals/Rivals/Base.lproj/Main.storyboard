@@ -329,20 +329,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FN0-17-XZm">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKV-YT-zhK">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcI-q1-KKu">
-                                                <rect key="frame" x="0.0" y="50" width="150" height="50"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcI-q1-KKu">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="75"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games Played" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P02-M9-kIs">
-                                                <rect key="frame" x="0.0" y="100" width="150" height="50"/>
+                                                <rect key="frame" x="0.0" y="75" width="150" height="75"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -352,20 +346,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="O0h-Ek-Agf">
                                         <rect key="frame" x="150" y="0.0" width="150" height="150"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdg-Qa-r9m">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntG-iV-vay">
-                                                <rect key="frame" x="0.0" y="50" width="150" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="75"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTb-9K-BTP">
-                                                <rect key="frame" x="0.0" y="100" width="150" height="50"/>
+                                                <rect key="frame" x="0.0" y="75" width="150" height="75"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -483,12 +471,12 @@
                     <connections>
                         <outlet property="btnMenuButton" destination="FIU-jA-FV5" id="8bO-sN-ePo"/>
                         <outlet property="completedButton" destination="h5g-NM-nif" id="bkP-qF-xkc"/>
-                        <outlet property="followersLabel" destination="sdg-Qa-r9m" id="tOq-gO-GqE"/>
-                        <outlet property="followingLabel" destination="ntG-iV-vay" id="ZcY-bd-ZtF"/>
+                        <outlet property="friendsNumberLabel" destination="ntG-iV-vay" id="0er-ER-zYT"/>
                         <outlet property="gamesPlayedLabel" destination="UTb-9K-BTP" id="x4m-YP-owv"/>
                         <outlet property="inProgressButton" destination="4Ju-rg-cUs" id="Q1g-2p-dpG"/>
                         <outlet property="lossesLabel" destination="YfO-NB-fae" id="s41-uX-8Vw"/>
                         <outlet property="profileImageView" destination="P4i-mX-Onc" id="R4M-Yt-s99"/>
+                        <outlet property="requestButton" destination="laq-Yf-88g" id="svY-41-ix0"/>
                         <outlet property="winsLabel" destination="jqf-n2-Bwx" id="Szo-Ea-V3o"/>
                     </connections>
                 </viewController>
@@ -604,6 +592,7 @@
                             <constraint firstItem="1nH-Vp-2SR" firstAttribute="leading" secondItem="GA9-8H-4zo" secondAttribute="leadingMargin" constant="1" id="AFa-SP-d5j"/>
                             <constraint firstAttribute="trailing" secondItem="ryu-9I-sQT" secondAttribute="trailing" id="EbE-3r-0dM"/>
                             <constraint firstItem="vdu-oc-mFf" firstAttribute="width" secondItem="GA9-8H-4zo" secondAttribute="height" multiplier="1:3" id="IIr-s5-PUv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ypz-uU-OOm" secondAttribute="trailing" constant="1" id="J68-lm-Tx3"/>
                             <constraint firstItem="ypz-uU-OOm" firstAttribute="top" secondItem="vdu-oc-mFf" secondAttribute="top" id="NQc-uW-Un5"/>
                             <constraint firstItem="1nH-Vp-2SR" firstAttribute="top" secondItem="tcq-6f-pLL" secondAttribute="bottom" constant="25" id="O7v-79-jcS"/>
                             <constraint firstItem="jpp-kT-1Uk" firstAttribute="top" secondItem="ryu-9I-sQT" secondAttribute="bottom" id="QHm-pq-E6w"/>
@@ -612,7 +601,6 @@
                             <constraint firstItem="ypz-uU-OOm" firstAttribute="leading" secondItem="vdu-oc-mFf" secondAttribute="trailing" constant="86" id="atF-cT-Aqj"/>
                             <constraint firstItem="di1-fT-97g" firstAttribute="trailing" secondItem="GA9-8H-4zo" secondAttribute="trailingMargin" id="irB-h9-YMI"/>
                             <constraint firstItem="vdu-oc-mFf" firstAttribute="top" secondItem="di1-fT-97g" secondAttribute="bottom" constant="26" id="kiN-m1-yfR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ypz-uU-OOm" secondAttribute="trailing" constant="1" id="ptj-Ob-KqO"/>
                             <constraint firstItem="1nH-Vp-2SR" firstAttribute="width" secondItem="GA9-8H-4zo" secondAttribute="height" multiplier="1:3" id="qQb-5I-rjs"/>
                             <constraint firstItem="di1-fT-97g" firstAttribute="leading" secondItem="GA9-8H-4zo" secondAttribute="leadingMargin" id="vSf-AA-GnY"/>
                             <constraint firstItem="ryu-9I-sQT" firstAttribute="top" secondItem="ypz-uU-OOm" secondAttribute="bottom" constant="19" id="ycU-Ve-QYI"/>
@@ -1356,7 +1344,6 @@
         <!--User Profile View Controller-->
         <scene sceneID="048-Yi-qCN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jDj-HC-luK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="otherUserProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w8g-Ti-jD2" customClass="UserProfileViewController" customModule="Rivals" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5XU-ZF-vgW"/>
@@ -1461,6 +1448,7 @@
                         <outlet property="winsLabel" destination="Nlg-Gq-0wo" id="Ae9-Ce-23I"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jDj-HC-luK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3280.8000000000002" y="1593.5532233883059"/>
         </scene>

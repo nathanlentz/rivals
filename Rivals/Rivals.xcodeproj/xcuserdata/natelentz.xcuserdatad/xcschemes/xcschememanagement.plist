@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Rivals Today.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Rivals.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A5A991B51EABD96200DF6334</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BD4615DB1E846F2F001F959B</key>
 		<dict>
 			<key>primary</key>
