@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var completedButton: UIButton!
     @IBOutlet weak var gamesPlayedLabel: UILabel!
     @IBOutlet weak var requestButton: UIButton!
+    
     // Reference for menu button
     @IBOutlet weak var friendsNumberLabel: UILabel!
     @IBOutlet weak var btnMenuButton: UIBarButtonItem!
