@@ -190,8 +190,8 @@
 				334EB7671E92CEB4007286DA /* HomeViewController.swift */,
 				39FD5F591EA26427004102CE /* ProfileViewController.swift */,
 				39FD5F5F1EA29A63004102CE /* UsersTableViewController.swift */,
-				39FD5F651EA3CF13004102CE /* FindUserTableViewController.swift */,
 				396CE1E01EABE33B000C2F8F /* FriendRequestTableViewController.swift */,
+				39FD5F651EA3CF13004102CE /* FindUserTableViewController.swift */,
 				39FD5F611EA3BADD004102CE /* UserProfileViewController.swift */,
 			);
 			name = Controllers;

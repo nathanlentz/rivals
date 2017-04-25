@@ -30,7 +30,8 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
         searchController.dimsBackgroundDuringPresentation = false
         // Ensures that searchbar shows only on this view
         definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
+        self.tableView.tableHeaderView = searchController.searchBar
+        self.extendedLayoutIncludesOpaqueBars = true;
         
         let currentUserId = FIRAuth.auth()?.currentUser?.uid
         

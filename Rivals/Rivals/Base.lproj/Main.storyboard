@@ -1057,7 +1057,7 @@
         <scene sceneID="NAW-Fn-8YF">
             <objects>
                 <tableViewController id="fWU-uq-QeZ" customClass="FindUserTableViewController" customModule="Rivals" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CvH-rp-aoA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CvH-rp-aoA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1095,10 +1095,10 @@
                             <outlet property="delegate" destination="fWU-uq-QeZ" id="KSd-vi-s3c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Player" id="dPg-su-Kjo">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="vmF-pp-vRj">
+                    <navigationItem key="navigationItem" title="Add Player" id="oQw-4F-aWF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="AZZ-EX-YMb">
                             <connections>
-                                <action selector="cancelDidPress:" destination="fWU-uq-QeZ" id="kti-dZ-p3f"/>
+                                <action selector="cancelDidPress:" destination="fWU-uq-QeZ" id="MgF-fD-FzS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
