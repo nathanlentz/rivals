@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
         
         btnMenuButton.target = revealViewController()
         btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         ref = FIRDatabase.database().reference()
         
@@ -42,6 +43,7 @@ class HomeViewController: UIViewController {
         self.inProgressButton.backgroundColor = RIVALS_PRIMARY
         self.completedButton.backgroundColor = RIVALS_PRIMARY
         self.requestButton.backgroundColor = RIVALS_BLUISH
+        view.backgroundColor = RIVALS_SECONDARY
         
         checkIfUserIsLoggedIn()
     

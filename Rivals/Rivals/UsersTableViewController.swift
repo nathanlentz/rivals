@@ -23,6 +23,7 @@ class UsersTableViewController: UITableViewController {
 
         btnMenuButton.target = revealViewController()
         btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         ref = FIRDatabase.database().reference()
         

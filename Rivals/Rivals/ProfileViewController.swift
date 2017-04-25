@@ -36,6 +36,9 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        view.backgroundColor = RIVALS_SECONDARY
         
     }
 

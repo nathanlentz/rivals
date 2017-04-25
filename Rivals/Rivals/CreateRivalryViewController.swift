@@ -28,6 +28,8 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        view.backgroundColor = RIVALS_SECONDARY
 
     }
     
