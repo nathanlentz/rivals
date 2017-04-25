@@ -39,6 +39,11 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
         
             // Check if user in snapshot has current user in friends list
             let user = snapshot.value as? NSDictionary
+            if user?["uid"] as? String == currentUserId {
+                self.users.append(snapshot.value as? NSDictionary)
+                self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
+            }
+            
             if let friends = user?["friends"] as! [String : Any]? {
                 for (key, _) in friends {
                     if key == currentUserId {

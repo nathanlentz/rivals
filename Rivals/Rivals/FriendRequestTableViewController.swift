@@ -48,6 +48,10 @@ class FriendRequestTableViewController: UITableViewController {
                     friend.name = pendingRequest["name"] as? String
                     friend.status = "Pending"
                     self.sentRequests.append(friend)
+                    
+                    DispatchQueue.main.async(execute: {
+                        self.tableView.reloadData()
+                    })
                 }
             }
         })
