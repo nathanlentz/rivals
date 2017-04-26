@@ -71,6 +71,7 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
     func createRivalry() -> Bool{
         // TODO Notify user if validation is not right
         var success = false
+        
         if gameNameText.text != "" && players.count > 1 {
             let currentUserId = FIRAuth.auth()?.currentUser?.uid
             
@@ -84,12 +85,20 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
                 success = true
             }
             else {
-                print("Failed to submit")
                 success = false
             }
             
             // TODO init game history and comments field, etc
             
+        }
+        
+        else {
+            print("Failed to submit")
+            let alertController = UIAlertController(title: "Error", message: "Ensure you have more than 1 person and a game name for your rivalry", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+            success = false
         }
         return success
         
