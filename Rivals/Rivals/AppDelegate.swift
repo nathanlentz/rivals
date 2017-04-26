@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navAppearance.isTranslucent = false
         navAppearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
-        
         return true
     }
 

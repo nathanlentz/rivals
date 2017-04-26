@@ -16,22 +16,34 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
-        WinsLabel.text = String(15)
-        LossesLabel.text = String(15)
+        
+//        if let dataFromApp = UserDefaults.init(suiteName: "group.rivalsntnl")?.value(forKey: "dataArray") {
+//            self.WinsLabel.text = dataFromApp as? [String]
+//        }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
+        if let dataFromApp = UserDefaults.init(suiteName: "group.rivalsntnl")?.value(forKey: "dataArray") {
+            if let dataArray = dataFromApp as? [String] {
+                if dataArray[0] != self.WinsLabel.text {
+                    self.WinsLabel.text = dataArray[0]
+                    
+                    completionHandler(NCUpdateResult.newData)
+                }
+                if dataArray[1] != self.LossesLabel.text {
+                    self.LossesLabel.text = dataArray[1]
+                    completionHandler(NCUpdateResult.newData)
+                }
+                else {
+                    completionHandler(NCUpdateResult.noData)
+                }
+            }
+
+            else {
+                completionHandler(NCUpdateResult.noData)
+            }
+        }
         
         completionHandler(NCUpdateResult.newData)
     }

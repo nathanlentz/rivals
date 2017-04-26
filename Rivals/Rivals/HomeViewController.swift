@@ -83,6 +83,11 @@ class HomeViewController: UIViewController {
                     }
 
                     self.gamesPlayedLabel.text = String(self.currentUser.wins! + self.currentUser.losses!)
+                    
+                    var dataForExtension = [String]()
+                    dataForExtension.append(String(self.currentUser.wins!))
+                    dataForExtension.append(String(self.currentUser.losses!))
+                    UserDefaults.init(suiteName: "group.rivalsntnl")?.set(dataForExtension, forKey: "dataArray")
                 }
             }, withCancel: nil)
         }

@@ -98,6 +98,7 @@
 		369D7CBE31B9C562301653D2 /* Pods_Rivals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rivals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3921F7ED1EA5B9E1008CA805 /* EditRivalryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRivalryViewController.swift; sourceTree = "<group>"; };
 		3921F7EF1EA5BFA4008CA805 /* AddGameToRivalryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGameToRivalryViewController.swift; sourceTree = "<group>"; };
+		392497961EB10129006D407F /* Rivals Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rivals Today.entitlements"; sourceTree = "<group>"; };
 		395FBA4A1EA5A65100CC28F6 /* RivalryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RivalryTableViewCell.swift; sourceTree = "<group>"; };
 		396CE1DC1EABD9A5000C2F8F /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		396CE1E01EABE33B000C2F8F /* FriendRequestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +242,7 @@
 		A5A991B91EABD96200DF6334 /* Rivals Today */ = {
 			isa = PBXGroup;
 			children = (
+				392497961EB10129006D407F /* Rivals Today.entitlements */,
 				A5A991BA1EABD96200DF6334 /* TodayViewController.swift */,
 				A5A991BC1EABD96200DF6334 /* MainInterface.storyboard */,
 				A5A991BF1EABD96200DF6334 /* Info.plist */,
@@ -389,6 +391,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 26UK5Z56VH;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					BD4615DB1E846F2F001F959B = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -650,6 +657,7 @@
 		A5A991C31EABD96200DF6334 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Rivals Today/Rivals Today.entitlements";
 				DEVELOPMENT_TEAM = 26UK5Z56VH;
 				INFOPLIST_FILE = "Rivals Today/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -663,6 +671,7 @@
 		A5A991C41EABD96200DF6334 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Rivals Today/Rivals Today.entitlements";
 				DEVELOPMENT_TEAM = 26UK5Z56VH;
 				INFOPLIST_FILE = "Rivals Today/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
