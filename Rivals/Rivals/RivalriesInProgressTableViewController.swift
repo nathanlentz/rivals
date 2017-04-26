@@ -27,7 +27,7 @@ class RivalriesInProgressTableViewController: UITableViewController {
                 rivalry.players = dict["players"] as? [String]
                 
                 if rivalry.inProgress == false{
-                    var index: Int = -1
+                    var index: Int = 0
                     for i in 0...self.rivalries.count - 1 {
                         if rivalry.rivalryKey == self.rivalries[i].rivalryKey {
                             index = i
