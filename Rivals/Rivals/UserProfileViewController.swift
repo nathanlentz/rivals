@@ -35,10 +35,7 @@ class UserProfileViewController: UIViewController {
         profileImageView.layer.masksToBounds = true
         
         self.currentUserId = FIRAuth.auth()?.currentUser?.uid
-        
-        if self.user.bio == "" || self.user.bio == nil {
-            self.bioTextField.text = "Looks like \(self.user.name ?? "this user") doesn't have a bio yet. What a loser"
-        }
+    
         
         loadUserSettings()
         getCurrentUser()
@@ -55,6 +52,13 @@ class UserProfileViewController: UIViewController {
         self.lossesLabel.text = String(self.user.losses!)
         if self.user.profileImageUrl != nil {
             self.profileImageView.loadImageUsingCacheWithUrlString(urlString: self.user.profileImageUrl!)
+        }
+        if self.user.bio == "" || self.user.bio == nil {
+            self.bioTextField.text = "Looks like \(self.user.name ?? "this user") doesn't have a bio yet. What a loser"
+        }
+            
+        else {
+            self.bioTextField.text = self.user.bio
         }
     }
     
