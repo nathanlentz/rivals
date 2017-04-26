@@ -79,6 +79,25 @@ class RivalriesCompletedTableViewController: UITableViewController {
             })
         }
         
+        var wins = 0
+        var losses = 0
+        ref.child("games").child(rivalry.rivalryKey!).observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! FIRDataSnapshot
+                if let dict = snap.value as? [String : Any] {
+                    if dict["result"] as? String == "Win" {
+                        cell.winsLabel.text = String(wins + 1)
+                        wins += 1
+                    }
+                    
+                    else if dict["result"] as? String == "Lose"{
+                        cell.lossesLabel.text = String(losses + 1)
+                        losses += 1
+                    }
+                }
+            }
+        })
+        
         return cell
     }
 
