@@ -1407,11 +1407,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rivals/EditRivalryViewController.swift"
-            timestampString = "514566015.740558"
+            timestampString = "514914749.862308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

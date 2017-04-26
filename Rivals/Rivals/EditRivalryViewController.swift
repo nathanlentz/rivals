@@ -186,6 +186,8 @@ class EditRivalryViewController: UIViewController, AddGameDelegate, UITableViewD
         if self.comments.count > 0 {
             cell.textLabel?.text = self.comments[self.comments.count - indexPath.row - 1]
         }
+        
+        cell.textLabel?.font = UIFont(name: (cell.textLabel?.font.fontName)!, size: 12)
 
         return cell
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 
 @UIApplicationMain
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Use Firebase library to configure APIs
         FIRApp.configure()
+        IQKeyboardManager.sharedManager().enable = true
         
         UIApplication.shared.statusBarStyle = .lightContent
         let navAppearance = UINavigationBar.appearance()

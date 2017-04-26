@@ -4,19 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Rivals.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>Pods-RivalsUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -26,7 +27,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>43E66DF9B21A787DFD6F7734F41C30A3</key>
+		<key>4DC059E04CBA98AEDDB5C34E02D551E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5CBFDBBF61415CE0963F2A29D1E80E11</key>
 		<dict>
 			<key>primary</key>
 			<true/>

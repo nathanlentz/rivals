@@ -52,7 +52,7 @@ class CreateRivalryViewController: UIViewController, UITableViewDelegate, UITabl
      */
     @IBAction func startRivalryDidPress(_ sender: Any) {
         if createRivalry(){
-            // TODO go to 
+            // TODO alert
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController")
             self.present(vc, animated: true, completion: nil)
         }
