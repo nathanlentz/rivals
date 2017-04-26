@@ -45,6 +45,32 @@ class LoginViewController : UIViewController {
     func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    
+
+    @IBAction func forgotPasswordDidPress(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Forgot Password", message: "Click okay to send a temporary password to your email", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) -> Void in
+            FIRAuth.auth()?.sendPasswordReset(withEmail: self.EmailTextField.text!, completion: { (error) in
+                if error != nil {
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                else {
+                    let alertController = UIAlertController(title: "Awesome!", message: "An email is on the way to your inbox", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "Sweet", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            })
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
 
     @IBAction func loginDidPress(_ sender: UIButton) {
         if(self.EmailTextField.text == "" || self.PasswordTextField.text == ""){

@@ -92,10 +92,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj3-5r-v0d">
+                                <rect key="frame" x="0.0" y="505" width="375" height="30"/>
+                                <state key="normal" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="forgotPasswordDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KFG-qV-CP1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qj3-5r-v0d" firstAttribute="top" secondItem="Ldu-hm-FAq" secondAttribute="bottom" constant="8" symbolic="YES" id="4IQ-xO-kqH"/>
                             <constraint firstItem="Ldu-hm-FAq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="3:4" id="78X-x3-Xqb"/>
+                            <constraint firstItem="qj3-5r-v0d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Wj-6t-0HU"/>
+                            <constraint firstItem="qj3-5r-v0d" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Aw0-v8-jfA"/>
                             <constraint firstItem="ije-1R-H42" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="D8f-hE-egz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F0H-B7-nsT" secondAttribute="trailing" constant="122" id="DJS-0D-wLP"/>
                             <constraint firstItem="ije-1R-H42" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FuT-RR-b7i"/>
