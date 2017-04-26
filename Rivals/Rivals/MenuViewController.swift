@@ -28,7 +28,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.backgroundColor = RIVALS_SECONDARY
         
         // Drawer Menu Items
-        menuNames = ["Edit Profile", "Home", "Search Users", "Logout"]
+        menuNames = ["Edit Profile", "Home", "View Users", "Logout"]
         menuItemImage = [UIImage(named: "profile-1")!, UIImage(named: "home")!, UIImage(named: "magnify")!, UIImage(named: "logout")!]
         
         // TODO Get name of current user to add to porfolio

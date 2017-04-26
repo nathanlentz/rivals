@@ -17,6 +17,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
+        WinsLabel.text = String(15)
+        LossesLabel.text = String(15)
     }
     
     override func didReceiveMemoryWarning() {
