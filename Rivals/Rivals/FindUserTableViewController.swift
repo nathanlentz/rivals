@@ -18,6 +18,7 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
     var users = [NSDictionary?]()
     var filteredUsers = [NSDictionary?]()
     var selectedUser = User()
+    var alreadySelectedUsers = [NSDictionary?]()
     
     var ref = FIRDatabase.database().reference()
     
@@ -39,7 +40,7 @@ class FindUserTableViewController: UITableViewController, UISearchResultsUpdatin
         
             // Check if user in snapshot has current user in friends list
             let user = snapshot.value as? NSDictionary
-            if user?["uid"] as? String == currentUserId {
+            if user?["uid"] as? String == currentUserId  {
                 self.users.append(snapshot.value as? NSDictionary)
                 self.addPlayerTableView.insertRows(at: [IndexPath(row:self.users.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
             }
