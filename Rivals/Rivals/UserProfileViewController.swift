@@ -17,7 +17,8 @@ class UserProfileViewController: UIViewController {
     var doesRequestExist = false
     var currentUserId: String?
 
-    @IBOutlet weak var bioField: UITextView!
+    
+    @IBOutlet weak var bioTextField: UITextView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var lossesLabel: UILabel!
@@ -29,12 +30,15 @@ class UserProfileViewController: UIViewController {
         
         self.navigationItem.title = user.name!
         self.friendButton.backgroundColor = RIVALS_PRIMARY
-        self.bioField.isEditable = false
         
         profileImageView.layer.cornerRadius = 50
         profileImageView.layer.masksToBounds = true
         
         self.currentUserId = FIRAuth.auth()?.currentUser?.uid
+        
+        if self.user.bio == "" || self.user.bio == nil {
+            self.bioTextField.text = "Looks like \(self.user.name ?? "this user") doesn't have a bio yet. What a loser"
+        }
         
         loadUserSettings()
         getCurrentUser()
@@ -59,6 +63,7 @@ class UserProfileViewController: UIViewController {
             if let dict = snapshot.value as? [String : Any] {
                 self.currentUser.uid = dict["uid"] as? String
                 self.currentUser.name = dict["name"] as? String
+                self.currentUser.bio = dict["bio"] as? String
 
             }
         }, withCancel: nil)

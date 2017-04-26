@@ -20,5 +20,6 @@ class User: NSObject {
     var rivalriesCompleted: [String: Any]?
     var friends: [String : Any]?
     var requests: [String : Any]?
+    var bio: String?
     
 }

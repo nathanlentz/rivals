@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var bioTextField: UITextView!
     
     var user = User()
     var imageUpdated = false
@@ -27,19 +28,25 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         btnMenuButton.target = revealViewController()
         btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         profileImageView.layer.cornerRadius = 50
         profileImageView.layer.masksToBounds = true
         
         self.errorLabel.text = ""
         
         getCurrentUserInfo()
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.dismissKeyboard))
+
         view.addGestureRecognizer(tap)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         view.backgroundColor = RIVALS_SECONDARY
         
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     /* Get Current User Information and populate */
@@ -52,6 +59,10 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
                 self.user.uid = dict["uid"] as? String
                 self.nameTextField.text = self.user.name
                 self.emailTextField.text = self.user.email
+                self.bioTextField.text = dict["bio"] as? String
+                if self.bioTextField.text == ""{
+                    self.bioTextField.text = "Take a second to fill out your bio. It's what the cool kids do"
+                }
                 if let userProfileImageUrl = dict["profileImageUrl"] as? String{
                     self.profileImageView.loadImageUsingCacheWithUrlString(urlString: userProfileImageUrl)
                 }
@@ -63,7 +74,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     /* Save Any Changes to user profile */
     @IBAction func saveButtonDidPress(_ sender: UIBarButtonItem) {
         
-        if nameTextField.text != self.user.name! || emailTextField.text != self.user.email || self.imageUpdated {
+        if nameTextField.text != self.user.name! || emailTextField.text != self.user.email || self.imageUpdated || bioTextField.text != self.user.bio {
             guard nameTextField.text != "", emailTextField.text != ""
                 else { return }
             
@@ -114,6 +125,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             if profileUpdated {
                 ref.child("profiles").child(self.user.uid!).child("name").setValue(self.nameTextField.text)
                 ref.child("profiles").child(self.user.uid!).child("email").setValue(self.emailTextField.text)
+                ref.child("profiles").child(self.user.uid!).child("bio").setValue(self.bioTextField.text)
                 
                 // Pop alert that profile was updated
                 let alertController = UIAlertController(title: "Success!", message: "Profile Updated!", preferredStyle: .alert)
